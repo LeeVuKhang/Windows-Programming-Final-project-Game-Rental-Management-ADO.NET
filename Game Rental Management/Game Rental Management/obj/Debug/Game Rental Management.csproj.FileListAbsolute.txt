@@ -1,0 +1,11 @@
+C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Game Rental Management\Game Rental Management\bin\Debug\Game Rental Management.exe.config
+C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Game Rental Management\Game Rental Management\bin\Debug\Game Rental Management.exe
+C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Game Rental Management\Game Rental Management\bin\Debug\Game Rental Management.pdb
+C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmMain.resources
+C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.Properties.Resources.resources
+C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.exe
+C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.pdb
+C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmBranch.resources
