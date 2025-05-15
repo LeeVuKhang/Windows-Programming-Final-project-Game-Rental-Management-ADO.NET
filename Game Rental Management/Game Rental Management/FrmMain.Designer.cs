@@ -79,7 +79,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnRentalDetails);
             this.panel2.Controls.Add(this.btnRental);
@@ -103,62 +103,67 @@
             // 
             // btnRentalDetails
             // 
-            this.btnRentalDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRentalDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
+            this.btnRentalDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRentalDetails.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRentalDetails.Location = new System.Drawing.Point(15, 342);
+            this.btnRentalDetails.Location = new System.Drawing.Point(0, 342);
             this.btnRentalDetails.Name = "btnRentalDetails";
-            this.btnRentalDetails.Size = new System.Drawing.Size(197, 39);
+            this.btnRentalDetails.Size = new System.Drawing.Size(225, 50);
             this.btnRentalDetails.TabIndex = 4;
             this.btnRentalDetails.Text = "RENTAL DETAILS";
-            this.btnRentalDetails.UseVisualStyleBackColor = true;
+            this.btnRentalDetails.UseVisualStyleBackColor = false;
             this.btnRentalDetails.Click += new System.EventHandler(this.btnRentalDetails_Click);
             // 
             // btnRental
             // 
-            this.btnRental.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRental.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
+            this.btnRental.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRental.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRental.Location = new System.Drawing.Point(15, 292);
+            this.btnRental.Location = new System.Drawing.Point(0, 292);
             this.btnRental.Name = "btnRental";
-            this.btnRental.Size = new System.Drawing.Size(197, 39);
+            this.btnRental.Size = new System.Drawing.Size(225, 50);
             this.btnRental.TabIndex = 3;
             this.btnRental.Text = "RENTAL";
-            this.btnRental.UseVisualStyleBackColor = true;
+            this.btnRental.UseVisualStyleBackColor = false;
             this.btnRental.Click += new System.EventHandler(this.btnRental_Click);
             // 
             // btnGame
             // 
-            this.btnGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
+            this.btnGame.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGame.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGame.Location = new System.Drawing.Point(15, 242);
+            this.btnGame.Location = new System.Drawing.Point(0, 242);
             this.btnGame.Name = "btnGame";
-            this.btnGame.Size = new System.Drawing.Size(197, 39);
+            this.btnGame.Size = new System.Drawing.Size(225, 50);
             this.btnGame.TabIndex = 2;
             this.btnGame.Text = "GAME";
-            this.btnGame.UseVisualStyleBackColor = true;
+            this.btnGame.UseVisualStyleBackColor = false;
             this.btnGame.Click += new System.EventHandler(this.btnGame_Click);
             // 
             // btnCustomer
             // 
-            this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
+            this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCustomer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCustomer.Location = new System.Drawing.Point(15, 192);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 192);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(197, 39);
+            this.btnCustomer.Size = new System.Drawing.Size(225, 50);
             this.btnCustomer.TabIndex = 1;
             this.btnCustomer.Text = "CUSTOMER";
-            this.btnCustomer.UseVisualStyleBackColor = true;
+            this.btnCustomer.UseVisualStyleBackColor = false;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnBranch
             // 
-            this.btnBranch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBranch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
+            this.btnBranch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBranch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBranch.Location = new System.Drawing.Point(15, 142);
+            this.btnBranch.Location = new System.Drawing.Point(0, 142);
             this.btnBranch.Name = "btnBranch";
-            this.btnBranch.Size = new System.Drawing.Size(197, 39);
+            this.btnBranch.Size = new System.Drawing.Size(225, 50);
             this.btnBranch.TabIndex = 0;
             this.btnBranch.Text = "BRANCH";
-            this.btnBranch.UseVisualStyleBackColor = true;
+            this.btnBranch.UseVisualStyleBackColor = false;
             this.btnBranch.Click += new System.EventHandler(this.btnBranch_Click);
             // 
             // frmBranch1
