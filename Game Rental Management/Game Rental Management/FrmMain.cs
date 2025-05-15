@@ -50,7 +50,7 @@ namespace Game_Rental_Management
             btnBranch.BackColor  = btnRental.BackColor =
                  btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
         }
-           //skibidi
+
         private void btnBranch_Click(object sender, EventArgs e)
         {
             btnBranch.BackColor = Color.RoyalBlue;
