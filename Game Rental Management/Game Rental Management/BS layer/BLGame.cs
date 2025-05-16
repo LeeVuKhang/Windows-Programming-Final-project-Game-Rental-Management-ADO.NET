@@ -17,25 +17,25 @@ namespace Game_Rental_Management.BS_layer
             db = new DBMain();
         }
 
-        public DataSet LayGame()
+        public DataSet GetGames()
         {
             return db.ExecuteQueryDataSet("SELECT * FROM Game", CommandType.Text);
         }
 
-        public bool ThemGame(string title, string platform, string genre, decimal pricePerDay, int status, int branchID, ref string err)
+        public bool AddGame(string gameID, string title, string platform, string genre, decimal pricePerDay, int status, string branchID, ref string err)
         {
-            string sqlString = "INSERT INTO Game (Title, Platform, Genre, PricePerDay, Status, BranchID) VALUES (N'" +
-                title + "', N'" + platform + "', N'" + genre + "', " + pricePerDay + ", " + status + ", " + branchID + ")";
+            string sqlString = "INSERT INTO Game (GameID, Title, Platform, Genre, PricePerDay, Status, BranchID) VALUES (" +
+                gameID + ", N'" + title + "', N'" + platform + "', N'" + genre + "', " + pricePerDay + ", " + status + ", " + branchID + ")";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
-        public bool XoaGame(ref string err, int gameID)
+        public bool DeleteGame(ref string err, string gameID)
         {
             string sqlString = "DELETE FROM Game WHERE GameID = " + gameID;
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
-        public bool CapNhatGame(int gameID, string title, string platform, string genre, decimal pricePerDay, int status, int branchID, ref string err)
+        public bool UpdateGame(string gameID, string title, string platform, string genre, decimal pricePerDay, int status, string branchID, ref string err)
         {
             string sqlString = "UPDATE Game SET " +
                 "Title = N'" + title + "', " +
@@ -48,5 +48,6 @@ namespace Game_Rental_Management.BS_layer
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }
+
 
 }

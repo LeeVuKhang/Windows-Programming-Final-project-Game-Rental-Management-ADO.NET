@@ -17,37 +17,38 @@ namespace Game_Rental_Management.BS_layer
             db = new DBMain();
         }
 
-        // Lấy tất cả chi nhánh
-        public DataSet LayBranch()
+        // Get all branches
+        public DataSet GetAllBranches()
         {
             return db.ExecuteQueryDataSet("SELECT * FROM Branch", CommandType.Text);
         }
 
-        // Thêm chi nhánh mới
-        public bool ThemBranch(string branchName, string address, string phone, ref string err)
+        // Add new branch
+        public bool AddBranch(string branchID, string branchName, string address, string phone, ref string err)
         {
-            string sqlString = "INSERT INTO Branch (BranchName, Address, Phone) VALUES (N'" +
-                branchName + "', N'" +
-                address + "', '" +
-                phone + "')";
+            string sqlString = "INSERT INTO Branch (BranchID, BranchName, Address, Phone) VALUES (" +
+                "'" + branchID + "', " +
+                "N'" + branchName + "', " +
+                "N'" + address + "', " +
+                "'" + phone + "')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
-        // Xóa chi nhánh theo BranchID
-        public bool XoaBranch(ref string err, int branchID)
+        // Delete branch by BranchID
+        public bool DeleteBranch(ref string err, string branchID)
         {
-            string sqlString = "DELETE FROM Branch WHERE BranchID = " + branchID;
+            string sqlString = "DELETE FROM Branch WHERE BranchID = '" + branchID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
-        // Cập nhật thông tin chi nhánh theo BranchID
-        public bool CapNhatBranch(int branchID, string branchName, string address, string phone, ref string err)
+        // Update branch information by BranchID
+        public bool UpdateBranch(string branchID, string branchName, string address, string phone, ref string err)
         {
             string sqlString = "UPDATE Branch SET " +
                 "BranchName = N'" + branchName + "', " +
                 "Address = N'" + address + "', " +
                 "Phone = '" + phone + "' " +
-                "WHERE BranchID = " + branchID;
+                "WHERE BranchID = '" + branchID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }

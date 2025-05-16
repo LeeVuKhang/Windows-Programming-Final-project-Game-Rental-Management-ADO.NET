@@ -74,9 +74,9 @@
             // dgvBRANCH
             // 
             this.dgvBRANCH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBRANCH.Location = new System.Drawing.Point(14, 58);
+            this.dgvBRANCH.Location = new System.Drawing.Point(19, 58);
             this.dgvBRANCH.Name = "dgvBRANCH";
-            this.dgvBRANCH.Size = new System.Drawing.Size(615, 196);
+            this.dgvBRANCH.Size = new System.Drawing.Size(615, 200);
             this.dgvBRANCH.TabIndex = 0;
             this.dgvBRANCH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBRANCH_CellClick);
             // 
@@ -114,6 +114,7 @@
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCancel
             // 
@@ -127,6 +128,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -140,6 +142,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
@@ -153,6 +156,7 @@
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -166,6 +170,7 @@
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnReload
             // 
@@ -179,6 +184,7 @@
             this.btnReload.TabIndex = 8;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = false;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // txtPhone
             // 

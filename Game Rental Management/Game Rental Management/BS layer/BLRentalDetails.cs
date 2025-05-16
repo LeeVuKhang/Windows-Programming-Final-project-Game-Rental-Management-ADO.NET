@@ -17,25 +17,25 @@ namespace Game_Rental_Management.BS_layer
             db = new DBMain();
         }
 
-        public DataSet LayRentalDetails()
+        public DataSet GetRentalDetails()
         {
             return db.ExecuteQueryDataSet("SELECT * FROM RentalDetails", CommandType.Text);
         }
 
-        public bool ThemRentalDetails(int rentalID, int gameID, int daysRented, decimal price, ref string err)
+        public bool AddRentalDetail(string rentalDetailID, int rentalID, int gameID, int daysRented, decimal price, ref string err)
         {
-            string sqlString = "INSERT INTO RentalDetails (RentalID, GameID, DaysRented, Price) VALUES (" +
-                rentalID + ", " + gameID + ", " + daysRented + ", " + price + ")";
+            string sqlString = "INSERT INTO RentalDetails (RentalDetailID, RentalID, GameID, DaysRented, Price) VALUES (" +
+                rentalDetailID + ", " + rentalID + ", " + gameID + ", " + daysRented + ", " + price + ")";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
-        public bool XoaRentalDetails(ref string err, int rentalDetailID)
+        public bool DeleteRentalDetail(ref string err, int rentalDetailID)
         {
             string sqlString = "DELETE FROM RentalDetails WHERE RentalDetailID = " + rentalDetailID;
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
-        public bool CapNhatRentalDetails(int rentalDetailID, int rentalID, int gameID, int daysRented, decimal price, ref string err)
+        public bool UpdateRentalDetail(string rentalDetailID, int rentalID, int gameID, int daysRented, decimal price, ref string err)
         {
             string sqlString = "UPDATE RentalDetails SET " +
                 "RentalID = " + rentalID + ", " +
@@ -46,4 +46,5 @@ namespace Game_Rental_Management.BS_layer
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }
+
 }
