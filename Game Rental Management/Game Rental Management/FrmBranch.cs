@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Game_Rental_Management.BS_layer;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
 namespace Game_Rental_Management
 {
@@ -31,9 +32,6 @@ namespace Game_Rental_Management
             InitializeComponent();
             LoadData();
         }
-
-
-
         void LoadData()
         {
             try
@@ -60,10 +58,9 @@ namespace Game_Rental_Management
                 this.btnCancel.Enabled = false;
 
                 this.btnAdd.Enabled = true;
-                this.btnUpdate.Enabled = true;
+                this.btnEdit.Enabled = true;
                 this.btnDelete.Enabled = true;
                 //this.btnExit.Enabled = true;
-
                 if (dgvBRANCH.CurrentRow != null)
                     dgvBRANCH_CellClick(null, null);
             }
@@ -73,54 +70,6 @@ namespace Game_Rental_Management
             }
         }
 
-        private void dgvBRANCH_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvBRANCH.CurrentRow != null)
-            {
-                int r = dgvBRANCH.CurrentRow.Index;
-                if (r >= 0)
-                {
-                    this.txtBranchID.Text = dgvBRANCH.Rows[r].Cells["BranchID"].Value.ToString();
-                    this.txtBranchName.Text = dgvBRANCH.Rows[r].Cells["BranchName"].Value.ToString();
-                    this.txtAddress.Text = dgvBRANCH.Rows[r].Cells["Address"].Value.ToString();
-                }
-            }
-        }
-
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            Them = true;
-            // Reset các textbox
-            this.txtBranchID.ResetText();
-            this.txtBranchName.ResetText();
-            this.txtAddress.ResetText();
-            this.txtPhone.ResetText();
-
-            // Bật Panel và các nút thao tác lưu/hủy
-
-            this.btnSave.Enabled = true;
-            this.btnCancel.Enabled = true;
-
-            // Vô hiệu hóa các nút khác
-            this.btnAdd.Enabled = false;
-            this.btnUpdate.Enabled = false;
-            this.btnDelete.Enabled = false;
-
-            // Cho phép nhập ID mới
-            this.txtBranchID.Enabled = true;
-            this.txtBranchID.Focus();
-
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -157,12 +106,12 @@ namespace Game_Rental_Management
             this.txtPhone.ResetText();
 
             this.btnAdd.Enabled = true;
-            this.btnUpdate.Enabled = true;
+            this.btnEdit.Enabled = true;
             this.btnDelete.Enabled = true;
 
             this.btnSave.Enabled = false;
             this.btnCancel.Enabled = false;
-
+            this.panel1.Enabled = false;
             dgvBRANCH_CellClick(null, null);
         }
 
@@ -193,14 +142,65 @@ namespace Game_Rental_Management
             }
         }
 
-        private void dgvBRANCH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+            Them = true;
+            // Reset các textbox
+            this.txtBranchID.ResetText();
+            this.txtBranchName.ResetText();
+            this.txtAddress.ResetText();
+            this.txtPhone.ResetText();
 
+            // Bật Panel và các nút thao tác lưu/hủy
+            this.panel1.Enabled = true;
+            this.btnSave.Enabled = true;
+            this.btnCancel.Enabled = true;
+
+            // Vô hiệu hóa các nút khác
+            this.btnAdd.Enabled = false;
+            this.btnEdit.Enabled = false;
+            this.btnDelete.Enabled = false;
+
+            // Cho phép nhập ID mới
+            this.txtBranchID.Enabled = true;
+            this.txtBranchID.Focus();
         }
 
-        private void FrmBranch_Load(object sender, EventArgs e)
+        private void btnReload_Click(object sender, EventArgs e)
         {
-
+            LoadData(); LoadData();
         }
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            Them = false;
+            this.panel1.Enabled = true;
+            dgvBRANCH_CellClick(null, null); // Gọi lại dữ liệu đang chọn vào textbox
+
+            this.btnSave.Enabled = true;
+            this.btnCancel.Enabled = true;
+
+            this.btnAdd.Enabled = false;
+            this.btnEdit.Enabled = false;
+            this.btnDelete.Enabled = false;
+
+            this.txtBranchID.Enabled = false; // Không cho sửa ID
+            this.txtBranchName.Focus();
+        }
+        private void dgvBRANCH_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvBRANCH.CurrentRow != null)
+            {
+                int r = dgvBRANCH.CurrentRow.Index;
+                if (r >= 0)
+                {
+                    this.txtBranchID.Text = dgvBRANCH.Rows[r].Cells["BranchID"].Value.ToString();
+                    this.txtBranchName.Text = dgvBRANCH.Rows[r].Cells["BranchName"].Value.ToString();
+                    this.txtAddress.Text = dgvBRANCH.Rows[r].Cells["Address"].Value.ToString();
+                    this.txtPhone.Text = dgvBRANCH.Rows[r].Cells["Phone"].Value.ToString();
+                }
+            }
+        }
+
+       
     }
 }

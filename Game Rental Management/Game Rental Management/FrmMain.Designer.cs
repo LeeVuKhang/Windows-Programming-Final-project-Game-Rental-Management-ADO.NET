@@ -58,10 +58,10 @@
             // lblExit
             // 
             this.lblExit.AutoSize = true;
-            this.lblExit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExit.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExit.Location = new System.Drawing.Point(862, 10);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(17, 18);
+            this.lblExit.Size = new System.Drawing.Size(23, 23);
             this.lblExit.TabIndex = 1;
             this.lblExit.Text = "X";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
