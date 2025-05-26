@@ -17,25 +17,25 @@ namespace Game_Rental_Management.BS_layer
             db = new DBMain();
         }
 
-        public DataSet LayCustomer()
+        public DataSet GetCustomers()
         {
             return db.ExecuteQueryDataSet("SELECT * FROM Customer", CommandType.Text);
         }
 
-        public bool ThemCustomer(string name, string phone, string email, string address, ref string err)
+        public bool AddCustomer(string customerID, string name, string phone, string email, string address, ref string err)
         {
-            string sqlString = "INSERT INTO Customer (Name, Phone, Email, Address) VALUES (N'" +
-                name + "', '" + phone + "', '" + email + "', N'" + address + "')";
+            string sqlString = "INSERT INTO Customer (CustomerID, Name, Phone, Email, Address) VALUES (" +
+                customerID + ", N'" + name + "', '" + phone + "', '" + email + "', N'" + address + "')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
-        public bool XoaCustomer(ref string err, int customerID)
+        public bool DeleteCustomer(ref string err, int customerID)
         {
             string sqlString = "DELETE FROM Customer WHERE CustomerID = " + customerID;
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
-        public bool CapNhatCustomer(int customerID, string name, string phone, string email, string address, ref string err)
+        public bool UpdateCustomer(string customerID, string name, string phone, string email, string address, ref string err)
         {
             string sqlString = "UPDATE Customer SET " +
                 "Name = N'" + name + "', " +
@@ -46,4 +46,5 @@ namespace Game_Rental_Management.BS_layer
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }
+
 }

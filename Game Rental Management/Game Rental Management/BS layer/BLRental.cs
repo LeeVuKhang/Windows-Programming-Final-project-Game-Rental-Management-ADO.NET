@@ -17,26 +17,26 @@ namespace Game_Rental_Management.BS_layer
             db = new DBMain();
         }
 
-        public DataSet LayRental()
+        public DataSet GetRentals()
         {
             return db.ExecuteQueryDataSet("SELECT * FROM Rental", CommandType.Text);
         }
 
-        public bool ThemRental(int customerID, DateTime rentalDate, DateTime returnDate, decimal totalCost, int branchID, ref string err)
+        public bool AddRental(string rentalID, string customerID, DateTime rentalDate, DateTime returnDate, decimal totalCost, string branchID, ref string err)
         {
-            string sqlString = "INSERT INTO Rental (CustomerID, RentalDate, ReturnDate, TotalCost, BranchID) VALUES (" +
-                customerID + ", '" + rentalDate.ToString("yyyy-MM-dd") + "', '" + returnDate.ToString("yyyy-MM-dd") + "', " +
+            string sqlString = "INSERT INTO Rental (RentalID, CustomerID, RentalDate, ReturnDate, TotalCost, BranchID) VALUES (" +
+                rentalID + ", " + customerID + ", '" + rentalDate.ToString("yyyy-MM-dd") + "', '" + returnDate.ToString("yyyy-MM-dd") + "', " +
                 totalCost + ", " + branchID + ")";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
-        public bool XoaRental(ref string err, int rentalID)
+        public bool DeleteRental(ref string err, string rentalID)
         {
             string sqlString = "DELETE FROM Rental WHERE RentalID = " + rentalID;
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
-        public bool CapNhatRental(int rentalID, int customerID, DateTime rentalDate, DateTime returnDate, decimal totalCost, int branchID, ref string err)
+        public bool UpdateRental(string rentalID, string customerID, DateTime rentalDate, DateTime returnDate, decimal totalCost, string branchID, ref string err)
         {
             string sqlString = "UPDATE Rental SET " +
                 "CustomerID = " + customerID + ", " +
@@ -48,4 +48,5 @@ namespace Game_Rental_Management.BS_layer
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }
+
 }
