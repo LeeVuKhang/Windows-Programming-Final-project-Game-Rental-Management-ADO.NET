@@ -20,3 +20,16 @@ C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\AD
 C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\ADO.NET vesions\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\ADO.NET vesions\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.exe
 C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\ADO.NET vesions\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.pdb
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\bin\Debug\Game Rental Management.exe.config
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\bin\Debug\Game Rental Management.exe
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\bin\Debug\Game Rental Management.pdb
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.AssemblyReference.cache
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmBranch.resources
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmMain.resources
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.Properties.Resources.resources
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.GenerateResource.cache
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.CoreCompileInputs.cache
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.exe
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.pdb
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmCustomer.resources
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmGame.resources

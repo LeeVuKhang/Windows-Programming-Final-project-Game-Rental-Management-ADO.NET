@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +14,9 @@ namespace Game_Rental_Management.DB_layer
 
     public class DBMain
     {
-        string ConnStr = "Data Source=(local);Initial Catalog=GameRentalDB;Integrated Security=True";
+        string ConnStr = "Data Source=DESKTOP-DSFVLOV\\SQLEXPRESS;" +
+ "Initial Catalog=GameRentalDB;" +
+ "Integrated Security=True";
 
         SqlConnection conn = null;
         SqlCommand comm = null;

@@ -57,5 +57,15 @@ namespace Game_Rental_Management
             btnRentalDetails.BackColor = btnRental.BackColor =
                  btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
         }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmCustomer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

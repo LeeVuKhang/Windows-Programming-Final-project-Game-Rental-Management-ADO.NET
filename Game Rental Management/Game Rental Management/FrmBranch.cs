@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Game_Rental_Management.BS_layer;
+
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
 namespace Game_Rental_Management
@@ -201,6 +201,14 @@ namespace Game_Rental_Management
             }
         }
 
-       
+        private void dgvBRANCH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmBranch_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

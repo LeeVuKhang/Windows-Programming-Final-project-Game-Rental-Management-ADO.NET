@@ -52,6 +52,12 @@
     <Compile Include="BS layer\BLRental.cs" />
     <Compile Include="BS layer\BLRentalDetails.cs" />
     <Compile Include="DB layer\DBMain.cs" />
+    <Compile Include="FrmGame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmGame.Designer.cs">
+      <DependentUpon>FrmGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,16 +71,10 @@
       <DependentUpon>FrmBranch.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCustomer.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FrmCustomer.Designer.cs">
       <DependentUpon>FrmCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmGame.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmGame.Designer.cs">
-      <DependentUpon>FrmGame.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRental.cs">
       <SubType>Form</SubType>
@@ -92,6 +92,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmBranch.resx">
       <DependentUpon>FrmBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomer.resx">
+      <DependentUpon>FrmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGame.resx">
+      <DependentUpon>FrmGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
