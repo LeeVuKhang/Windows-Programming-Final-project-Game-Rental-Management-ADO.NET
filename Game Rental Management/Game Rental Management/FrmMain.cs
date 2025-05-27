@@ -16,6 +16,11 @@ namespace Game_Rental_Management
         {
             InitializeComponent();
             btnBranch.BackColor = Color.RoyalBlue;
+            frmBranch1.Show();
+            frmGame1.Hide();
+            frmCustomer1.Hide();
+            frmRentalDetails1.Hide();
+            frmRental1.Hide();
         }
 
         private void lblExit_Click(object sender, EventArgs e)
@@ -28,6 +33,12 @@ namespace Game_Rental_Management
             btnCustomer.BackColor = Color.RoyalBlue;
             btnRentalDetails.BackColor = btnGame.BackColor = btnRental.BackColor =
                  btnGame.BackColor = btnBranch.BackColor = Color.FromArgb(0, 31, 63);
+
+            frmBranch1.Hide();
+            frmGame1.Hide();
+            frmCustomer1.Show();
+            frmRentalDetails1.Hide();
+            frmRental1.Hide();  
         }
 
         private void btnGame_Click(object sender, EventArgs e)
@@ -35,6 +46,12 @@ namespace Game_Rental_Management
             btnGame.BackColor = Color.RoyalBlue;
             btnRentalDetails.BackColor  = btnRental.BackColor =
                  btnBranch.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
+
+            frmBranch1.Hide();
+            frmGame1.Show();
+            frmCustomer1.Hide();
+            frmRentalDetails1.Hide();
+            frmRental1.Hide();
         }
 
         private void btnRental_Click(object sender, EventArgs e)
@@ -42,6 +59,12 @@ namespace Game_Rental_Management
             btnRental.BackColor = Color.RoyalBlue;
             btnRentalDetails.BackColor  = btnBranch.BackColor =
                  btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
+
+            frmBranch1.Hide();
+            frmGame1.Hide();
+            frmCustomer1.Hide();
+            frmRentalDetails1.Hide();
+            frmRental1.Show();
         }
 
         private void btnRentalDetails_Click(object sender, EventArgs e)
@@ -49,6 +72,12 @@ namespace Game_Rental_Management
             btnRentalDetails.BackColor = Color.RoyalBlue;
             btnBranch.BackColor  = btnRental.BackColor =
                  btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
+
+            frmBranch1.Hide();
+            frmGame1.Hide();
+            frmCustomer1.Hide();
+            frmRentalDetails1.Show();
+            frmRental1.Hide();
         }
            //skibidi
         private void btnBranch_Click(object sender, EventArgs e)
@@ -56,6 +85,12 @@ namespace Game_Rental_Management
             btnBranch.BackColor = Color.RoyalBlue;
             btnRentalDetails.BackColor = btnRental.BackColor =
                  btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
+
+            frmBranch1.Show();
+            frmGame1.Hide();
+            frmCustomer1.Hide();
+            frmRentalDetails1.Hide();
+            frmRental1.Hide();
         }
 
         private void FrmMain_Load(object sender, EventArgs e)

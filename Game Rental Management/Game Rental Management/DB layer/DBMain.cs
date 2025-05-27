@@ -14,7 +14,7 @@ namespace Game_Rental_Management.DB_layer
 
     public class DBMain
     {
-        string ConnStr = "Data Source=DESKTOP-DSFVLOV\\SQLEXPRESS;" +
+        string ConnStr = "Data Source=(local);" +
  "Initial Catalog=GameRentalDB;" +
  "Integrated Security=True";
 
