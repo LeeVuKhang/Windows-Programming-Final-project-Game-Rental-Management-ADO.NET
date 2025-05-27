@@ -48,7 +48,7 @@ namespace Game_Rental_Management
                 txtPlatform.ResetText();
                 txtGenre.ResetText();
                 txtPricePerDay.ResetText();
-                txtStatus.ResetText();
+                chkStatus.Checked = false; ;
                 txtBranchID.ResetText();
 
                 // Disable Save/Cancel, enable action buttons
@@ -78,8 +78,9 @@ namespace Game_Rental_Management
                     txtPlatform.Text = dgvGAME.Rows[r].Cells["Platform"].Value.ToString();
                     txtGenre.Text = dgvGAME.Rows[r].Cells["Genre"].Value.ToString();
                     txtPricePerDay.Text = dgvGAME.Rows[r].Cells["PricePerDay"].Value.ToString();
-                    txtStatus.Text = dgvGAME.Rows[r].Cells["Status"].Value.ToString();
-                    txtBranchID.Text = dgvGAME.Rows[r].Cells["BranchID"].Value.ToString();
+                    object statusCell = dgvGAME.Rows[r].Cells["Status"].Value;
+                    chkStatus.Checked = Convert.ToBoolean(dgvGAME.Rows[r].Cells["Status"].Value); 
+                    txtBranchID.Text = dgvGAME.Rows[r].Cells["BranchID"].Value.ToString();  
                 }
             }
         }
@@ -98,7 +99,7 @@ namespace Game_Rental_Management
             txtPlatform.ResetText();
             txtGenre.ResetText();
             txtPricePerDay.ResetText();
-            txtStatus.ResetText();
+            chkStatus.Checked = false; ;
             txtBranchID.ResetText();
 
             btnSave.Enabled = true;
@@ -137,7 +138,7 @@ namespace Game_Rental_Management
                         txtPlatform.Text,
                         txtGenre.Text,
                         decimal.Parse(txtPricePerDay.Text),
-                        int.Parse(txtStatus.Text),
+                        chkStatus.Checked ? 1 : 0,
                         txtBranchID.Text,
                         ref err
                     );
@@ -159,7 +160,7 @@ namespace Game_Rental_Management
                         txtPlatform.Text,
                         txtGenre.Text,
                         decimal.Parse(txtPricePerDay.Text),
-                        int.Parse(txtStatus.Text),
+                        chkStatus.Checked ? 1 : 0,
                         txtBranchID.Text,
                         ref err
                     );
@@ -180,7 +181,7 @@ namespace Game_Rental_Management
             txtPlatform.ResetText();
             txtGenre.ResetText();
             txtPricePerDay.ResetText();
-            txtStatus.ResetText();
+            chkStatus.Checked = false; ;
             txtBranchID.ResetText();
 
             btnAdd.Enabled = true;
@@ -189,6 +190,16 @@ namespace Game_Rental_Management
             btnCancel.Enabled = false;
 
             dgvGAME_CellClick(null, null);
+        }
+
+        private void txtStatus_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

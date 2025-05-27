@@ -77,13 +77,13 @@
       <DependentUpon>FrmCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRental.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FrmRental.Designer.cs">
       <DependentUpon>FrmRental.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRentalDetails.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FrmRentalDetails.Designer.cs">
       <DependentUpon>FrmRentalDetails.cs</DependentUpon>
@@ -101,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRental.resx">
+      <DependentUpon>FrmRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRentalDetails.resx">
+      <DependentUpon>FrmRentalDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

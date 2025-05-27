@@ -33,3 +33,5 @@ D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET
 D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.pdb
 D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmCustomer.resources
 D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmGame.resources
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmRental.resources
+D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmRentalDetails.resources

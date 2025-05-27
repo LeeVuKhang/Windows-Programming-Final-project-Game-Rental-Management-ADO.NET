@@ -67,5 +67,10 @@ namespace Game_Rental_Management
         {
 
         }
+
+        private void frmGame1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -32,8 +32,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvGAME = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtBranchID = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPricePerDay = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -49,6 +47,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.chkStatus = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtBranchID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGAME)).BeginInit();
             this.panel2.SuspendLayout();
@@ -91,7 +92,8 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel2.Controls.Add(this.txtBranchID);
-            this.panel2.Controls.Add(this.txtStatus);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.chkStatus);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txtPricePerDay);
             this.panel2.Controls.Add(this.btnCancel);
@@ -112,20 +114,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(966, 357);
             this.panel2.TabIndex = 4;
-            // 
-            // txtBranchID
-            // 
-            this.txtBranchID.Location = new System.Drawing.Point(506, 202);
-            this.txtBranchID.Name = "txtBranchID";
-            this.txtBranchID.Size = new System.Drawing.Size(100, 26);
-            this.txtBranchID.TabIndex = 17;
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(182, 222);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(100, 26);
-            this.txtStatus.TabIndex = 16;
             // 
             // label6
             // 
@@ -300,6 +288,34 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer ID: ";
             // 
+            // chkStatus
+            // 
+            this.chkStatus.AutoSize = true;
+            this.chkStatus.Location = new System.Drawing.Point(735, 216);
+            this.chkStatus.Name = "chkStatus";
+            this.chkStatus.Size = new System.Drawing.Size(82, 24);
+            this.chkStatus.TabIndex = 5;
+            this.chkStatus.Text = "Status";
+            this.chkStatus.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(59, 216);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 25);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Branch ID:";
+            // 
+            // txtBranchID
+            // 
+            this.txtBranchID.Location = new System.Drawing.Point(182, 215);
+            this.txtBranchID.Name = "txtBranchID";
+            this.txtBranchID.Size = new System.Drawing.Size(504, 26);
+            this.txtBranchID.TabIndex = 19;
+            // 
             // FrmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -324,8 +340,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvGAME;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtBranchID;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPricePerDay;
         private System.Windows.Forms.Button btnCancel;
@@ -341,5 +355,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkStatus;
+        private System.Windows.Forms.TextBox txtBranchID;
+        private System.Windows.Forms.Label label7;
     }
 }

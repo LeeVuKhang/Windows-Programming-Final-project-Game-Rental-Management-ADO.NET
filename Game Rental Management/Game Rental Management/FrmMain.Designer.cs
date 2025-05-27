@@ -32,13 +32,13 @@
             this.lblExit = new System.Windows.Forms.Label();
             this.lblFormtxt = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRentalDetails = new System.Windows.Forms.Button();
             this.btnRental = new System.Windows.Forms.Button();
             this.btnGame = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnBranch = new System.Windows.Forms.Button();
-            this.frmCustomer1 = new Game_Rental_Management.FrmCustomer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.frmRentalDetails1 = new Game_Rental_Management.FrmRentalDetails();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,16 +95,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(338, 846);
             this.panel2.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Game_Rental_Management.Properties.Resources.Logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(98, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 154);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // btnRentalDetails
             // 
@@ -176,19 +166,29 @@
             this.btnBranch.UseVisualStyleBackColor = false;
             this.btnBranch.Click += new System.EventHandler(this.btnBranch_Click);
             // 
-            // frmCustomer1
+            // pictureBox1
             // 
-            this.frmCustomer1.Location = new System.Drawing.Point(338, 62);
-            this.frmCustomer1.Name = "frmCustomer1";
-            this.frmCustomer1.Size = new System.Drawing.Size(990, 790);
-            this.frmCustomer1.TabIndex = 2;
+            this.pictureBox1.Image = global::Game_Rental_Management.Properties.Resources.Logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(98, 22);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 154);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // frmRentalDetails1
+            // 
+            this.frmRentalDetails1.Location = new System.Drawing.Point(345, 62);
+            this.frmRentalDetails1.Name = "frmRentalDetails1";
+            this.frmRentalDetails1.Size = new System.Drawing.Size(1103, 801);
+            this.frmRentalDetails1.TabIndex = 2;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 908);
-            this.Controls.Add(this.frmCustomer1);
+            this.Controls.Add(this.frmRentalDetails1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -218,7 +218,7 @@
         private System.Windows.Forms.Button btnBranch;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblExit;
-        private FrmCustomer frmCustomer1;
+        private FrmRentalDetails frmRentalDetails1;
     }
 }
 
