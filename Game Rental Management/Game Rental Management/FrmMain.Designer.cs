@@ -55,17 +55,19 @@
             this.panel1.Controls.Add(this.lblFormtxt);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 40);
+            this.panel1.Size = new System.Drawing.Size(1200, 49);
             this.panel1.TabIndex = 0;
             // 
             // lblExit
             // 
             this.lblExit.AutoSize = true;
             this.lblExit.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExit.Location = new System.Drawing.Point(862, 10);
+            this.lblExit.Location = new System.Drawing.Point(1149, 12);
+            this.lblExit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(23, 23);
+            this.lblExit.Size = new System.Drawing.Size(29, 29);
             this.lblExit.TabIndex = 1;
             this.lblExit.Text = "X";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
@@ -75,9 +77,10 @@
             this.lblFormtxt.AutoSize = true;
             this.lblFormtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormtxt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFormtxt.Location = new System.Drawing.Point(12, 12);
+            this.lblFormtxt.Location = new System.Drawing.Point(16, 15);
+            this.lblFormtxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFormtxt.Name = "lblFormtxt";
-            this.lblFormtxt.Size = new System.Drawing.Size(200, 15);
+            this.lblFormtxt.Size = new System.Drawing.Size(239, 18);
             this.lblFormtxt.TabIndex = 0;
             this.lblFormtxt.Text = "Game Rental Management System";
             // 
@@ -91,17 +94,19 @@
             this.panel2.Controls.Add(this.btnCustomer);
             this.panel2.Controls.Add(this.btnBranch);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 40);
+            this.panel2.Location = new System.Drawing.Point(0, 49);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(225, 550);
+            this.panel2.Size = new System.Drawing.Size(300, 677);
             this.panel2.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Game_Rental_Management.Properties.Resources.Logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(65, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(87, 17);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(133, 123);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -110,9 +115,10 @@
             this.btnRentalDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.btnRentalDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRentalDetails.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRentalDetails.Location = new System.Drawing.Point(0, 342);
+            this.btnRentalDetails.Location = new System.Drawing.Point(0, 421);
+            this.btnRentalDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRentalDetails.Name = "btnRentalDetails";
-            this.btnRentalDetails.Size = new System.Drawing.Size(225, 50);
+            this.btnRentalDetails.Size = new System.Drawing.Size(300, 62);
             this.btnRentalDetails.TabIndex = 4;
             this.btnRentalDetails.Text = "RENTAL DETAILS";
             this.btnRentalDetails.UseVisualStyleBackColor = false;
@@ -123,9 +129,10 @@
             this.btnRental.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.btnRental.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRental.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRental.Location = new System.Drawing.Point(0, 292);
+            this.btnRental.Location = new System.Drawing.Point(0, 359);
+            this.btnRental.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRental.Name = "btnRental";
-            this.btnRental.Size = new System.Drawing.Size(225, 50);
+            this.btnRental.Size = new System.Drawing.Size(300, 62);
             this.btnRental.TabIndex = 3;
             this.btnRental.Text = "RENTAL";
             this.btnRental.UseVisualStyleBackColor = false;
@@ -136,9 +143,10 @@
             this.btnGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.btnGame.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGame.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGame.Location = new System.Drawing.Point(0, 242);
+            this.btnGame.Location = new System.Drawing.Point(0, 298);
+            this.btnGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGame.Name = "btnGame";
-            this.btnGame.Size = new System.Drawing.Size(225, 50);
+            this.btnGame.Size = new System.Drawing.Size(300, 62);
             this.btnGame.TabIndex = 2;
             this.btnGame.Text = "GAME";
             this.btnGame.UseVisualStyleBackColor = false;
@@ -149,9 +157,10 @@
             this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCustomer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCustomer.Location = new System.Drawing.Point(0, 192);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 236);
+            this.btnCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(225, 50);
+            this.btnCustomer.Size = new System.Drawing.Size(300, 62);
             this.btnCustomer.TabIndex = 1;
             this.btnCustomer.Text = "CUSTOMER";
             this.btnCustomer.UseVisualStyleBackColor = false;
@@ -162,9 +171,10 @@
             this.btnBranch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.btnBranch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBranch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBranch.Location = new System.Drawing.Point(0, 142);
+            this.btnBranch.Location = new System.Drawing.Point(0, 175);
+            this.btnBranch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBranch.Name = "btnBranch";
-            this.btnBranch.Size = new System.Drawing.Size(225, 50);
+            this.btnBranch.Size = new System.Drawing.Size(300, 62);
             this.btnBranch.TabIndex = 0;
             this.btnBranch.Text = "BRANCH";
             this.btnBranch.UseVisualStyleBackColor = false;
@@ -172,48 +182,50 @@
             // 
             // frmCustomer1
             // 
-            this.frmCustomer1.Location = new System.Drawing.Point(223, 40);
-            this.frmCustomer1.Margin = new System.Windows.Forms.Padding(2);
+            this.frmCustomer1.Location = new System.Drawing.Point(297, 49);
+            this.frmCustomer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.frmCustomer1.Name = "frmCustomer1";
-            this.frmCustomer1.Size = new System.Drawing.Size(675, 550);
+            this.frmCustomer1.Size = new System.Drawing.Size(900, 677);
             this.frmCustomer1.TabIndex = 3;
             // 
             // frmBranch1
             // 
-            this.frmBranch1.Location = new System.Drawing.Point(223, 40);
+            this.frmBranch1.Location = new System.Drawing.Point(297, 49);
+            this.frmBranch1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.frmBranch1.Name = "frmBranch1";
-            this.frmBranch1.Size = new System.Drawing.Size(675, 550);
+            this.frmBranch1.Size = new System.Drawing.Size(900, 677);
             this.frmBranch1.TabIndex = 2;
             // 
             // frmGame1
             // 
-            this.frmGame1.Location = new System.Drawing.Point(223, 40);
-            this.frmGame1.Margin = new System.Windows.Forms.Padding(2);
+            this.frmGame1.Location = new System.Drawing.Point(297, 49);
+            this.frmGame1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.frmGame1.Name = "frmGame1";
-            this.frmGame1.Size = new System.Drawing.Size(675, 550);
+            this.frmGame1.Size = new System.Drawing.Size(900, 677);
             this.frmGame1.TabIndex = 4;
             // 
             // frmRental1
             // 
-            this.frmRental1.Location = new System.Drawing.Point(223, 40);
-            this.frmRental1.Margin = new System.Windows.Forms.Padding(2);
+            this.frmRental1.Location = new System.Drawing.Point(297, 49);
+            this.frmRental1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.frmRental1.Name = "frmRental1";
-            this.frmRental1.Size = new System.Drawing.Size(675, 550);
+            this.frmRental1.Size = new System.Drawing.Size(900, 677);
             this.frmRental1.TabIndex = 5;
             // 
             // frmRentalDetails1
             // 
-            this.frmRentalDetails1.Location = new System.Drawing.Point(223, 40);
-            this.frmRentalDetails1.Margin = new System.Windows.Forms.Padding(2);
+            this.frmRentalDetails1.Location = new System.Drawing.Point(297, 49);
+            this.frmRentalDetails1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.frmRentalDetails1.Name = "frmRentalDetails1";
-            this.frmRentalDetails1.Size = new System.Drawing.Size(675, 550);
+            this.frmRentalDetails1.Size = new System.Drawing.Size(900, 677);
             this.frmRentalDetails1.TabIndex = 6;
+            this.frmRentalDetails1.Load += new System.EventHandler(this.frmRentalDetails1_Load);
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 590);
+            this.ClientSize = new System.Drawing.Size(1200, 726);
             this.Controls.Add(this.frmRentalDetails1);
             this.Controls.Add(this.frmRental1);
             this.Controls.Add(this.frmGame1);
@@ -223,6 +235,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";

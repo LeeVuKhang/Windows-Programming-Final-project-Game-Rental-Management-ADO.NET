@@ -50,3 +50,18 @@ C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Te
 C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Test\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Test\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.exe
 C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\Test\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.pdb
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\bin\Debug\Game Rental Management.exe.config
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\bin\Debug\Game Rental Management.exe
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\bin\Debug\Game Rental Management.pdb
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.AssemblyReference.cache
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmBranch.resources
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmCustomer.resources
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmGame.resources
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmMain.resources
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmRental.resources
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmRentalDetails.resources
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.Properties.Resources.resources
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.GenerateResource.cache
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.CoreCompileInputs.cache
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.exe
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.pdb

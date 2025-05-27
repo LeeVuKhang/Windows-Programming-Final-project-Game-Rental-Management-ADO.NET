@@ -107,5 +107,10 @@ namespace Game_Rental_Management
         {
 
         }
+
+        private void frmRentalDetails1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

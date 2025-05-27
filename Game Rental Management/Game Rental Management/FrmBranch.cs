@@ -59,7 +59,6 @@ namespace Game_Rental_Management
 
                 this.btnAdd.Enabled = true;
                 this.btnEdit.Enabled = true;
-                this.btnDelete.Enabled = true;
                 //this.btnExit.Enabled = true;
                 if (dgvBRANCH.CurrentRow != null)
                     dgvBRANCH_CellClick(null, null);
@@ -107,7 +106,6 @@ namespace Game_Rental_Management
 
             this.btnAdd.Enabled = true;
             this.btnEdit.Enabled = true;
-            this.btnDelete.Enabled = true;
 
             this.btnSave.Enabled = false;
             this.btnCancel.Enabled = false;
@@ -117,29 +115,6 @@ namespace Game_Rental_Management
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int r = dgvBRANCH.CurrentCell.RowIndex;
-                string strBranchID = dgvBRANCH.Rows[r].Cells[0].Value.ToString();
-
-                DialogResult traloi = MessageBox.Show("Bạn chắc chắn muốn xóa chi nhánh này?", "Xác nhận xóa",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (traloi == DialogResult.Yes)
-                {
-                    dbBranch.DeleteBranch(ref err, strBranchID);
-                    LoadData();
-                    MessageBox.Show("Đã xóa chi nhánh!");
-                }
-                else
-                {
-                    MessageBox.Show("Không xóa chi nhánh.");
-                }
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Lỗi khi xóa chi nhánh.");
-            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -159,7 +134,6 @@ namespace Game_Rental_Management
             // Vô hiệu hóa các nút khác
             this.btnAdd.Enabled = false;
             this.btnEdit.Enabled = false;
-            this.btnDelete.Enabled = false;
 
             // Cho phép nhập ID mới
             this.txtBranchID.Enabled = true;
@@ -168,7 +142,7 @@ namespace Game_Rental_Management
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            LoadData(); LoadData();
+            LoadData();
         }
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -181,7 +155,6 @@ namespace Game_Rental_Management
 
             this.btnAdd.Enabled = false;
             this.btnEdit.Enabled = false;
-            this.btnDelete.Enabled = false;
 
             this.txtBranchID.Enabled = false; // Không cho sửa ID
             this.txtBranchName.Focus();
