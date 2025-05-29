@@ -18,10 +18,13 @@ namespace Game_Rental_Management.BS_layer
             return db.ExecuteQueryDataSet("SELECT * FROM RentalDetails", CommandType.Text);
         }
 
-        public bool AddRentalDetail(int rentalID, int gameID, int daysRented, decimal price, ref string err)
+        public bool AddRentalDetail(string rentalID, string gameID, int daysRented, decimal price, ref string err)
         {
             string sqlString = "INSERT INTO RentalDetails (RentalID, GameID, DaysRented, Price) VALUES (" +
-                rentalID + ", " + gameID + ", " + daysRented + ", " + price + ")";
+                "'" + rentalID + "', " +
+                "'" + gameID + "', " +
+                daysRented + ", " +
+                price + ")";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
@@ -33,12 +36,12 @@ namespace Game_Rental_Management.BS_layer
         }
 
         // Update based on composite key RentalID and GameID
-        public bool UpdateRentalDetail(int rentalID, int gameID, int daysRented, decimal price, ref string err)
+        public bool UpdateRentalDetail(string rentalID, string gameID, int daysRented, decimal price, ref string err)
         {
             string sqlString = "UPDATE RentalDetails SET " +
                 "DaysRented = " + daysRented + ", " +
                 "Price = " + price + " " +
-                "WHERE RentalID = " + rentalID + " AND GameID = " + gameID;
+                "WHERE RentalID = '" + rentalID + "' AND GameID = '" + gameID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }

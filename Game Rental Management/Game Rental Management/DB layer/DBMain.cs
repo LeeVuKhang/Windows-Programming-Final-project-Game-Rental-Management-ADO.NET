@@ -14,7 +14,7 @@ namespace Game_Rental_Management.DB_layer
 
     public class DBMain
     {
-        string ConnStr = "Data Source = NGUYENTIENCUONG;" +
+        string ConnStr = "Data Source =DESKTOP-DSFVLOV\\SQLEXPRESS;" +
  "Initial Catalog=GameRentalDB;" +
  "Integrated Security=True";
 
@@ -71,6 +71,29 @@ namespace Game_Rental_Management.DB_layer
                 conn.Close();
             }
 
+            return success;
+        }
+        public bool MyExecuteNonQuery(string strSQL, CommandType ct, SqlParameter[] parameters, ref string error)
+        {
+            bool success = false;
+            using (SqlConnection conn = new SqlConnection(ConnStr))
+            using (SqlCommand comm = conn.CreateCommand())
+            {
+                conn.Open();
+                comm.CommandText = strSQL;
+                comm.CommandType = ct;
+                if (parameters != null)
+                    comm.Parameters.AddRange(parameters);
+                try
+                {
+                    comm.ExecuteNonQuery();
+                    success = true;
+                }
+                catch (SqlException ex)
+                {
+                    error = ex.Message;
+                }
+            }
             return success;
         }
     }

@@ -68,20 +68,17 @@ namespace Game_Rental_Management
 
         private void dgvGAME_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvGAME.CurrentRow != null)
+            if (dgvGAME.CurrentRow != null && dgvGAME.Rows.Count > 0)
             {
                 int r = dgvGAME.CurrentRow.Index;
-                if (r >= 0)
-                {
-                    txtGameID.Text = dgvGAME.Rows[r].Cells["GameID"].Value.ToString();
-                    txtTitle.Text = dgvGAME.Rows[r].Cells["Title"].Value.ToString();
-                    txtPlatform.Text = dgvGAME.Rows[r].Cells["Platform"].Value.ToString();
-                    txtGenre.Text = dgvGAME.Rows[r].Cells["Genre"].Value.ToString();
-                    txtPricePerDay.Text = dgvGAME.Rows[r].Cells["PricePerDay"].Value.ToString();
-                    object statusCell = dgvGAME.Rows[r].Cells["Status"].Value;
-                    chkStatus.Checked = Convert.ToBoolean(dgvGAME.Rows[r].Cells["Status"].Value); 
-                    txtBranchID.Text = dgvGAME.Rows[r].Cells["BranchID"].Value.ToString();  
-                }
+                txtGameID.Text = dgvGAME.Rows[r].Cells["GameID"].Value?.ToString() ?? "";
+                txtTitle.Text = dgvGAME.Rows[r].Cells["Title"].Value?.ToString() ?? "";
+                txtPlatform.Text = dgvGAME.Rows[r].Cells["Platform"].Value?.ToString() ?? "";
+                txtGenre.Text = dgvGAME.Rows[r].Cells["Genre"].Value?.ToString() ?? "";
+                txtPricePerDay.Text = dgvGAME.Rows[r].Cells["PricePerDay"].Value?.ToString() ?? "";
+                txtBranchID.Text = dgvGAME.Rows[r].Cells["BranchID"].Value?.ToString() ?? "";
+                chkStatus.Checked = dgvGAME.Rows[r].Cells["Status"].Value != DBNull.Value &&
+                                    Convert.ToBoolean(dgvGAME.Rows[r].Cells["Status"].Value);
             }
         }
 
@@ -128,49 +125,70 @@ namespace Game_Rental_Management
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Them)
+            if (string.IsNullOrWhiteSpace(txtGameID.Text) || string.IsNullOrWhiteSpace(txtTitle.Text) ||
+        string.IsNullOrWhiteSpace(txtPlatform.Text) || string.IsNullOrWhiteSpace(txtGenre.Text) ||
+        string.IsNullOrWhiteSpace(txtPricePerDay.Text) || string.IsNullOrWhiteSpace(txtBranchID.Text))
             {
-                try
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            if (!decimal.TryParse(txtPricePerDay.Text, out decimal pricePerDay) || pricePerDay < 0)
+            {
+                MessageBox.Show("Giá thuê mỗi ngày phải là số không âm!");
+                return;
+            }
+
+            try
+            {
+                if (Them)
                 {
-                    dbGame.AddGame(
+                    bool success = dbGame.AddGame(
                         txtGameID.Text,
                         txtTitle.Text,
                         txtPlatform.Text,
                         txtGenre.Text,
-                        decimal.Parse(txtPricePerDay.Text),
+                        pricePerDay,
                         chkStatus.Checked ? 1 : 0,
                         txtBranchID.Text,
                         ref err
                     );
-                    LoadData();
-                    MessageBox.Show("Đã thêm game mới!");
+                    if (success)
+                    {
+                        LoadData();
+                        MessageBox.Show("Đã thêm game mới!");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Lỗi khi thêm game: {err}");
+                    }
                 }
-                catch (SqlException)
+                else
                 {
-                    MessageBox.Show("Lỗi khi thêm game.");
+                    bool success = dbGame.UpdateGame(
+                        txtGameID.Text,
+                        txtTitle.Text,
+                        txtPlatform.Text,
+                        txtGenre.Text,
+                        pricePerDay,
+                        chkStatus.Checked ? 1 : 0,
+                        txtBranchID.Text,
+                        ref err
+                    );
+                    if (success)
+                    {
+                        LoadData();
+                        MessageBox.Show("Đã cập nhật thông tin game!");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Lỗi khi cập nhật game: {err}");
+                    }
                 }
             }
-            else
+            catch (SqlException ex)
             {
-                try
-                {
-                    dbGame.UpdateGame(
-                        txtGameID.Text,
-                        txtTitle.Text,
-                        txtPlatform.Text,
-                        txtGenre.Text,
-                        decimal.Parse(txtPricePerDay.Text),
-                        chkStatus.Checked ? 1 : 0,
-                        txtBranchID.Text,
-                        ref err
-                    );
-                    LoadData();
-                    MessageBox.Show("Đã cập nhật thông tin game!");
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Lỗi khi cập nhật game.");
-                }
+                MessageBox.Show($"Lỗi SQL: {ex.Message}");
             }
         }
 

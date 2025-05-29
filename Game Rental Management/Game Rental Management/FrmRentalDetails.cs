@@ -27,16 +27,13 @@ namespace Game_Rental_Management
 
         private void dgvRENTALDETAIL_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvRENTALDETAIL.CurrentRow != null)
+            if (dgvRENTALDETAIL.CurrentRow != null && dgvRENTALDETAIL.Rows.Count > 0)
             {
                 int r = dgvRENTALDETAIL.CurrentRow.Index;
-                if (r >= 0)
-                {
-                    txtRentalID.Text = dgvRENTALDETAIL.Rows[r].Cells["RentalID"].Value.ToString();
-                    txtGameID.Text = dgvRENTALDETAIL.Rows[r].Cells["GameID"].Value.ToString();
-                    txtDaysRented.Text = dgvRENTALDETAIL.Rows[r].Cells["DaysRented"].Value.ToString();
-                    txtPrice.Text = dgvRENTALDETAIL.Rows[r].Cells["Price"].Value.ToString();
-                }
+                txtRentalID.Text = dgvRENTALDETAIL.Rows[r].Cells["RentalID"].Value?.ToString() ?? "";
+                txtGameID.Text = dgvRENTALDETAIL.Rows[r].Cells["GameID"].Value?.ToString() ?? "";
+                txtDaysRented.Text = dgvRENTALDETAIL.Rows[r].Cells["DaysRented"].Value?.ToString() ?? "";
+                txtPrice.Text = dgvRENTALDETAIL.Rows[r].Cells["Price"].Value?.ToString() ?? "";
             }
         }
         void LoadData()
@@ -55,7 +52,6 @@ namespace Game_Rental_Management
                 dgvRENTALDETAIL.Columns[2].Width = 100; // DaysRented
                 dgvRENTALDETAIL.Columns[3].Width = 100; // Price
 
-                // Remove txtRentalDetailID.ResetText();
                 txtRentalID.ResetText();
                 txtGameID.ResetText();
                 txtDaysRented.ResetText();
@@ -66,12 +62,12 @@ namespace Game_Rental_Management
                 btnAdd.Enabled = true;
                 btnEdit.Enabled = true;
 
-                if (dgvRENTALDETAIL.CurrentRow != null)
+                if (dgvRENTALDETAIL.CurrentRow != null && dgvRENTALDETAIL.Rows.Count > 0)
                     dgvRENTALDETAIL_CellClick(null, null);
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Không lấy được dữ liệu chi tiết thuê. Lỗi rồi!");
+                MessageBox.Show($"Không lấy được dữ liệu chi tiết thuê: {ex.Message}");
             }
         }
 
@@ -116,43 +112,69 @@ namespace Game_Rental_Management
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Them)
+            if (string.IsNullOrWhiteSpace(txtRentalID.Text) || string.IsNullOrWhiteSpace(txtGameID.Text) ||
+                 string.IsNullOrWhiteSpace(txtDaysRented.Text) || string.IsNullOrWhiteSpace(txtPrice.Text))
             {
-                try
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            if (!int.TryParse(txtDaysRented.Text, out int daysRented) || daysRented <= 0)
+            {
+                MessageBox.Show("Số ngày thuê phải là số nguyên dương!");
+                return;
+            }
+
+            if (!decimal.TryParse(txtPrice.Text, out decimal price) || price < 0)
+            {
+                MessageBox.Show("Giá phải là số không âm!");
+                return;
+            }
+
+            try
+            {
+                if (Them)
                 {
-                    dbRentalDetail.AddRentalDetail(
-                        int.Parse(txtRentalID.Text),
-                        int.Parse(txtGameID.Text),
-                        int.Parse(txtDaysRented.Text),
-                        decimal.Parse(txtPrice.Text),
+                    bool success = dbRentalDetail.AddRentalDetail(
+                        txtRentalID.Text,
+                        txtGameID.Text,
+                        daysRented,
+                        price,
                         ref err
                     );
-                    LoadData();
-                    MessageBox.Show("Đã thêm chi tiết thuê mới!");
+                    if (success)
+                    {
+                        LoadData();
+                        MessageBox.Show("Đã thêm chi tiết thuê mới!");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Lỗi khi thêm chi tiết thuê: {err}");
+                    }
                 }
-                catch (SqlException)
+                else
                 {
-                    MessageBox.Show("Lỗi khi thêm chi tiết thuê.");
+                    bool success = dbRentalDetail.UpdateRentalDetail(
+                        txtRentalID.Text,
+                        txtGameID.Text,
+                        daysRented,
+                        price,
+                        ref err
+                    );
+                    if (success)
+                    {
+                        LoadData();
+                        MessageBox.Show("Đã cập nhật chi tiết thuê!");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Lỗi khi cập nhật chi tiết thuê: {err}");
+                    }
                 }
             }
-            else
+            catch (SqlException ex)
             {
-                try
-                {
-                    dbRentalDetail.UpdateRentalDetail(
-                        int.Parse(txtRentalID.Text),
-                        int.Parse(txtGameID.Text),
-                        int.Parse(txtDaysRented.Text),
-                        decimal.Parse(txtPrice.Text),
-                        ref err
-                    );
-                    LoadData();
-                    MessageBox.Show("Đã cập nhật chi tiết thuê!");
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Lỗi khi cập nhật chi tiết thuê.");
-                }
+                MessageBox.Show($"Lỗi: {ex.Message}");
             }
         }
 

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,12 @@ namespace Game_Rental_Management.BS_layer
         public bool AddRental(string rentalID, string customerID, DateTime rentalDate, DateTime returnDate, decimal totalCost, string branchID, ref string err)
         {
             string sqlString = "INSERT INTO Rental (RentalID, CustomerID, RentalDate, ReturnDate, TotalCost, BranchID) VALUES (" +
-                rentalID + ", " + customerID + ", '" + rentalDate.ToString("yyyy-MM-dd") + "', '" + returnDate.ToString("yyyy-MM-dd") + "', " +
-                totalCost + ", " + branchID + ")";
+                "'" + rentalID + "', " +
+                "'" + customerID + "', " +
+                "'" + rentalDate.ToString("yyyy-MM-dd") + "', " +
+                "'" + returnDate.ToString("yyyy-MM-dd") + "', " +
+                totalCost + ", " +
+                "'" + branchID + "')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
@@ -39,12 +44,12 @@ namespace Game_Rental_Management.BS_layer
         public bool UpdateRental(string rentalID, string customerID, DateTime rentalDate, DateTime returnDate, decimal totalCost, string branchID, ref string err)
         {
             string sqlString = "UPDATE Rental SET " +
-                "CustomerID = " + customerID + ", " +
+                "CustomerID = '" + customerID + "', " +
                 "RentalDate = '" + rentalDate.ToString("yyyy-MM-dd") + "', " +
                 "ReturnDate = '" + returnDate.ToString("yyyy-MM-dd") + "', " +
                 "TotalCost = " + totalCost + ", " +
-                "BranchID = " + branchID + " " +
-                "WHERE RentalID = " + rentalID;
+                "BranchID = '" + branchID + "' " +
+                "WHERE RentalID = '" + rentalID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }

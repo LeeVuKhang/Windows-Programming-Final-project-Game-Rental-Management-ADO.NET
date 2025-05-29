@@ -25,13 +25,13 @@ namespace Game_Rental_Management.BS_layer
         public bool AddCustomer(string customerID, string name, string phone, string email, string address, ref string err)
         {
             string sqlString = "INSERT INTO Customer (CustomerID, Name, Phone, Email, Address) VALUES (" +
-                customerID + ", N'" + name + "', '" + phone + "', '" + email + "', N'" + address + "')";
+                "'" + customerID + "', N'" + name + "', N'" + phone + "', N'" + email + "', N'" + address + "')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
-        public bool DeleteCustomer(ref string err, int customerID)
+        public bool DeleteCustomer(ref string err, string customerID)
         {
-            string sqlString = "DELETE FROM Customer WHERE CustomerID = " + customerID;
+            string sqlString = "DELETE FROM Customer WHERE CustomerID = '" + customerID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
@@ -39,10 +39,10 @@ namespace Game_Rental_Management.BS_layer
         {
             string sqlString = "UPDATE Customer SET " +
                 "Name = N'" + name + "', " +
-                "Phone = '" + phone + "', " +
-                "Email = '" + email + "', " +
+                "Phone = N'" + phone + "', " +
+                "Email = N'" + email + "', " +
                 "Address = N'" + address + "' " +
-                "WHERE CustomerID = " + customerID;
+                "WHERE CustomerID = '" + customerID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }

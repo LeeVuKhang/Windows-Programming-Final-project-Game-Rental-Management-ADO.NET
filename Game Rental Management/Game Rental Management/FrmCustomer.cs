@@ -42,7 +42,7 @@ namespace Game_Rental_Management
 
                 dgvCUSTOMER.DataSource = dtCustomer;
                 dgvCUSTOMER.Columns[0].Width = 80;   // CustomerID
-                dgvCUSTOMER.Columns[1].Width = 150;  // CustomerName
+                dgvCUSTOMER.Columns[1].Width = 150;  // Name
                 dgvCUSTOMER.Columns[2].Width = 200;  // Email
                 dgvCUSTOMER.Columns[3].Width = 120;  // Phone
                 dgvCUSTOMER.Columns[4].Width = 200;  // Address
@@ -60,29 +60,24 @@ namespace Game_Rental_Management
                 btnAdd.Enabled = true;
                 btnEdit.Enabled = true;
 
-
                 if (dgvCUSTOMER.CurrentRow != null)
                     dgvCUSTOMER_CellClick(null, null);
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Không lấy được dữ liệu Customer. Lỗi rồi!!!");
+                MessageBox.Show($"Không lấy được dữ liệu Customer: {ex.Message}");
             }
-
         }
         private void dgvCUSTOMER_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvCUSTOMER.CurrentRow != null)
+            if (dgvCUSTOMER.CurrentRow != null && dgvCUSTOMER.Rows.Count > 0)
             {
                 int r = dgvCUSTOMER.CurrentRow.Index;
-                if (r >= 0)
-                {
-                    txtCustomerID.Text = dgvCUSTOMER.Rows[r].Cells["CustomerID"].Value.ToString();
-                    txtCustomerName.Text = dgvCUSTOMER.Rows[r].Cells["Name"].Value.ToString();
-                    txtEmail.Text = dgvCUSTOMER.Rows[r].Cells["Email"].Value.ToString();
-                    txtPhone.Text = dgvCUSTOMER.Rows[r].Cells["Phone"].Value.ToString();
-                    txtAddress.Text = dgvCUSTOMER.Rows[r].Cells["Address"].Value.ToString();
-                }
+                txtCustomerID.Text = dgvCUSTOMER.Rows[r].Cells["CustomerID"].Value?.ToString() ?? "";
+                txtCustomerName.Text = dgvCUSTOMER.Rows[r].Cells["Name"].Value?.ToString() ?? "";
+                txtEmail.Text = dgvCUSTOMER.Rows[r].Cells["Email"].Value?.ToString() ?? "";
+                txtPhone.Text = dgvCUSTOMER.Rows[r].Cells["Phone"].Value?.ToString() ?? "";
+                txtAddress.Text = dgvCUSTOMER.Rows[r].Cells["Address"].Value?.ToString() ?? "";
             }
         }
 
@@ -133,45 +128,60 @@ namespace Game_Rental_Management
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Them)
+            if (string.IsNullOrWhiteSpace(txtCustomerID.Text) || string.IsNullOrWhiteSpace(txtCustomerName.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text) ||
+                string.IsNullOrWhiteSpace(txtAddress.Text))
             {
-                try
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            try
+            {
+                if (Them)
                 {
-                    dbCustomer.AddCustomer(
+                    bool success = dbCustomer.AddCustomer(
                         txtCustomerID.Text,
                         txtCustomerName.Text,
-                        txtEmail.Text,
                         txtPhone.Text,
+                        txtEmail.Text,
                         txtAddress.Text,
                         ref err
                     );
-                    LoadData();
-                    MessageBox.Show("Đã thêm khách hàng mới!");
+                    if (success)
+                    {
+                        LoadData();
+                        MessageBox.Show("Đã thêm khách hàng mới!");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Lỗi khi thêm khách hàng: {err}");
+                    }
                 }
-                catch (SqlException)
+                else
                 {
-                    MessageBox.Show("Lỗi khi thêm khách hàng.");
+                    bool success = dbCustomer.UpdateCustomer(
+                        txtCustomerID.Text,
+                        txtCustomerName.Text,
+                        txtPhone.Text,
+                        txtEmail.Text,
+                        txtAddress.Text,
+                        ref err
+                    );
+                    if (success)
+                    {
+                        LoadData();
+                        MessageBox.Show("Đã cập nhật thông tin khách hàng!");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Lỗi khi cập nhật khách hàng: {err}");
+                    }
                 }
             }
-            else
+            catch (SqlException ex)
             {
-                try
-                {
-                    dbCustomer.UpdateCustomer(
-                        txtCustomerID.Text,
-                        txtCustomerName.Text,
-                        txtEmail.Text,
-                        txtPhone.Text,
-                        txtAddress.Text,
-                        ref err
-                    );
-                    LoadData();
-                    MessageBox.Show("Đã cập nhật thông tin khách hàng!");
-                }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Lỗi khi cập nhật khách hàng.");
-                }
+                MessageBox.Show($"Lỗi: {ex.Message}");
             }
         }
 

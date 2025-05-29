@@ -25,7 +25,7 @@ namespace Game_Rental_Management.BS_layer
         public bool AddGame(string gameID, string title, string platform, string genre, decimal pricePerDay, int status, string branchID, ref string err)
         {
             string sqlString = "INSERT INTO Game (GameID, Title, Platform, Genre, PricePerDay, Status, BranchID) VALUES (" +
-                gameID + ", N'" + title + "', N'" + platform + "', N'" + genre + "', " + pricePerDay + ", " + status + ", " + branchID + ")";
+                "'" + gameID + "', N'" + title + "', N'" + platform + "', N'" + genre + "', " + pricePerDay + ", " + status + ", '" + branchID + "')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
 
@@ -43,8 +43,8 @@ namespace Game_Rental_Management.BS_layer
                 "Genre = N'" + genre + "', " +
                 "PricePerDay = " + pricePerDay + ", " +
                 "Status = " + status + ", " +
-                "BranchID = " + branchID + " " +
-                "WHERE GameID = " + gameID;
+                "BranchID = '" + branchID + "' " +
+                "WHERE GameID = '" + gameID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }
