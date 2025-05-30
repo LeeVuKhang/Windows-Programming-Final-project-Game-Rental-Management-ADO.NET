@@ -14,7 +14,7 @@ namespace Game_Rental_Management.DB_layer
 
     public class DBMain
     {
-        string ConnStr = "Data Source =DESKTOP-DSFVLOV\\SQLEXPRESS;" +
+        string ConnStr = "Data Source =(local);" +
  "Initial Catalog=GameRentalDB;" +
  "Integrated Security=True";
 
@@ -42,6 +42,28 @@ namespace Game_Rental_Management.DB_layer
 
             da.Fill(ds);
             conn.Close(); 
+            return ds;
+        }
+        //Query with parameter
+        public DataSet ExecuteQueryDataSet(string strSQL, CommandType ct, params SqlParameter[] parameters)
+        {
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+
+            comm.Parameters.Clear(); // Xóa tham số cũ nếu có
+            comm.CommandText = strSQL;
+            comm.CommandType = ct;
+            comm.Connection = conn;
+
+            if (parameters != null)
+                comm.Parameters.AddRange(parameters);
+
+            da = new SqlDataAdapter(comm);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            conn.Close();
             return ds;
         }
 

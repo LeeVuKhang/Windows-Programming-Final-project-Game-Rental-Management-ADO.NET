@@ -47,11 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BS layer\BLBranch.cs" />
+    <Compile Include="BS layer\BLBranchRevenue.cs" />
     <Compile Include="BS layer\BLCustomer.cs" />
     <Compile Include="BS layer\BLGame.cs" />
     <Compile Include="BS layer\BLRental.cs" />
     <Compile Include="BS layer\BLRentalDetails.cs" />
     <Compile Include="DB layer\DBMain.cs" />
+    <Compile Include="FrmBranchRevenueReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmBranchRevenueReport.Designer.cs">
+      <DependentUpon>FrmBranchRevenueReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGame.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +99,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmBranch.resx">
       <DependentUpon>FrmBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBranchRevenueReport.resx">
+      <DependentUpon>FrmBranchRevenueReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCustomer.resx">
       <DependentUpon>FrmCustomer.cs</DependentUpon>

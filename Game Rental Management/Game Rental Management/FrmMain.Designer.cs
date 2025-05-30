@@ -32,6 +32,7 @@
             this.lblExit = new System.Windows.Forms.Label();
             this.lblFormtxt = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnBranchRevenue = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRentalDetails = new System.Windows.Forms.Button();
             this.btnRental = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.frmGame1 = new Game_Rental_Management.FrmGame();
             this.frmCustomer1 = new Game_Rental_Management.FrmCustomer();
             this.frmBranch1 = new Game_Rental_Management.FrmBranch();
+            this.frmBranchRevenueReport1 = new Game_Rental_Management.FrmBranchRevenueReport();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,9 +57,8 @@
             this.panel1.Controls.Add(this.lblFormtxt);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1350, 61);
+            this.panel1.Size = new System.Drawing.Size(900, 40);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -65,10 +66,9 @@
             // 
             this.lblExit.AutoSize = true;
             this.lblExit.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExit.Location = new System.Drawing.Point(1293, 15);
-            this.lblExit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExit.Location = new System.Drawing.Point(862, 10);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(35, 35);
+            this.lblExit.Size = new System.Drawing.Size(23, 23);
             this.lblExit.TabIndex = 1;
             this.lblExit.Text = "X";
             this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
@@ -78,16 +78,16 @@
             this.lblFormtxt.AutoSize = true;
             this.lblFormtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormtxt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFormtxt.Location = new System.Drawing.Point(18, 19);
-            this.lblFormtxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFormtxt.Location = new System.Drawing.Point(12, 12);
             this.lblFormtxt.Name = "lblFormtxt";
-            this.lblFormtxt.Size = new System.Drawing.Size(287, 22);
+            this.lblFormtxt.Size = new System.Drawing.Size(200, 15);
             this.lblFormtxt.TabIndex = 0;
             this.lblFormtxt.Text = "Game Rental Management System";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
+            this.panel2.Controls.Add(this.btnBranchRevenue);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btnRentalDetails);
             this.panel2.Controls.Add(this.btnRental);
@@ -95,19 +95,30 @@
             this.panel2.Controls.Add(this.btnCustomer);
             this.panel2.Controls.Add(this.btnBranch);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 61);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(338, 847);
+            this.panel2.Size = new System.Drawing.Size(225, 535);
             this.panel2.TabIndex = 1;
+            // 
+            // btnBranchRevenue
+            // 
+            this.btnBranchRevenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
+            this.btnBranchRevenue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBranchRevenue.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBranchRevenue.Location = new System.Drawing.Point(0, 372);
+            this.btnBranchRevenue.Name = "btnBranchRevenue";
+            this.btnBranchRevenue.Size = new System.Drawing.Size(225, 51);
+            this.btnBranchRevenue.TabIndex = 6;
+            this.btnBranchRevenue.Text = "BRANCH REVENUE";
+            this.btnBranchRevenue.UseVisualStyleBackColor = false;
+            this.btnBranchRevenue.Click += new System.EventHandler(this.btnBranchRevenue_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Game_Rental_Management.Properties.Resources.Logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(98, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(65, 14);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 154);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -116,10 +127,9 @@
             this.btnRentalDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.btnRentalDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRentalDetails.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRentalDetails.Location = new System.Drawing.Point(0, 526);
-            this.btnRentalDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRentalDetails.Location = new System.Drawing.Point(0, 322);
             this.btnRentalDetails.Name = "btnRentalDetails";
-            this.btnRentalDetails.Size = new System.Drawing.Size(338, 78);
+            this.btnRentalDetails.Size = new System.Drawing.Size(225, 51);
             this.btnRentalDetails.TabIndex = 4;
             this.btnRentalDetails.Text = "RENTAL DETAILS";
             this.btnRentalDetails.UseVisualStyleBackColor = false;
@@ -130,10 +140,9 @@
             this.btnRental.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.btnRental.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRental.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRental.Location = new System.Drawing.Point(0, 449);
-            this.btnRental.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRental.Location = new System.Drawing.Point(0, 272);
             this.btnRental.Name = "btnRental";
-            this.btnRental.Size = new System.Drawing.Size(338, 78);
+            this.btnRental.Size = new System.Drawing.Size(225, 51);
             this.btnRental.TabIndex = 3;
             this.btnRental.Text = "RENTAL";
             this.btnRental.UseVisualStyleBackColor = false;
@@ -144,10 +153,9 @@
             this.btnGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.btnGame.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGame.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGame.Location = new System.Drawing.Point(0, 372);
-            this.btnGame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnGame.Location = new System.Drawing.Point(0, 222);
             this.btnGame.Name = "btnGame";
-            this.btnGame.Size = new System.Drawing.Size(338, 78);
+            this.btnGame.Size = new System.Drawing.Size(225, 51);
             this.btnGame.TabIndex = 2;
             this.btnGame.Text = "GAME";
             this.btnGame.UseVisualStyleBackColor = false;
@@ -158,10 +166,9 @@
             this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCustomer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCustomer.Location = new System.Drawing.Point(0, 295);
-            this.btnCustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCustomer.Location = new System.Drawing.Point(0, 172);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(338, 78);
+            this.btnCustomer.Size = new System.Drawing.Size(225, 51);
             this.btnCustomer.TabIndex = 1;
             this.btnCustomer.Text = "CUSTOMER";
             this.btnCustomer.UseVisualStyleBackColor = false;
@@ -172,10 +179,9 @@
             this.btnBranch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.btnBranch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBranch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBranch.Location = new System.Drawing.Point(0, 219);
-            this.btnBranch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBranch.Location = new System.Drawing.Point(0, 122);
             this.btnBranch.Name = "btnBranch";
-            this.btnBranch.Size = new System.Drawing.Size(338, 78);
+            this.btnBranch.Size = new System.Drawing.Size(225, 51);
             this.btnBranch.TabIndex = 0;
             this.btnBranch.Text = "BRANCH";
             this.btnBranch.UseVisualStyleBackColor = false;
@@ -183,50 +189,58 @@
             // 
             // frmRentalDetails1
             // 
-            this.frmRentalDetails1.Location = new System.Drawing.Point(334, 61);
-            this.frmRentalDetails1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.frmRentalDetails1.Location = new System.Drawing.Point(223, 40);
+            this.frmRentalDetails1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.frmRentalDetails1.Name = "frmRentalDetails1";
-            this.frmRentalDetails1.Size = new System.Drawing.Size(1012, 846);
+            this.frmRentalDetails1.Size = new System.Drawing.Size(675, 550);
             this.frmRentalDetails1.TabIndex = 6;
             this.frmRentalDetails1.Load += new System.EventHandler(this.frmRentalDetails1_Load);
             // 
             // frmRental1
             // 
-            this.frmRental1.Location = new System.Drawing.Point(334, 61);
-            this.frmRental1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.frmRental1.Location = new System.Drawing.Point(223, 40);
+            this.frmRental1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.frmRental1.Name = "frmRental1";
-            this.frmRental1.Size = new System.Drawing.Size(1012, 846);
+            this.frmRental1.Size = new System.Drawing.Size(675, 550);
             this.frmRental1.TabIndex = 5;
             // 
             // frmGame1
             // 
-            this.frmGame1.Location = new System.Drawing.Point(334, 61);
-            this.frmGame1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.frmGame1.Location = new System.Drawing.Point(223, 40);
+            this.frmGame1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.frmGame1.Name = "frmGame1";
-            this.frmGame1.Size = new System.Drawing.Size(1012, 846);
+            this.frmGame1.Size = new System.Drawing.Size(675, 550);
             this.frmGame1.TabIndex = 4;
             // 
             // frmCustomer1
             // 
-            this.frmCustomer1.Location = new System.Drawing.Point(334, 61);
-            this.frmCustomer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.frmCustomer1.Location = new System.Drawing.Point(223, 40);
+            this.frmCustomer1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.frmCustomer1.Name = "frmCustomer1";
-            this.frmCustomer1.Size = new System.Drawing.Size(1012, 846);
+            this.frmCustomer1.Size = new System.Drawing.Size(675, 550);
             this.frmCustomer1.TabIndex = 3;
             // 
             // frmBranch1
             // 
-            this.frmBranch1.Location = new System.Drawing.Point(334, 61);
-            this.frmBranch1.Margin = new System.Windows.Forms.Padding(6);
+            this.frmBranch1.Location = new System.Drawing.Point(223, 40);
+            this.frmBranch1.Margin = new System.Windows.Forms.Padding(4);
             this.frmBranch1.Name = "frmBranch1";
-            this.frmBranch1.Size = new System.Drawing.Size(1012, 846);
+            this.frmBranch1.Size = new System.Drawing.Size(675, 550);
             this.frmBranch1.TabIndex = 2;
+            // 
+            // frmBranchRevenueReport1
+            // 
+            this.frmBranchRevenueReport1.Location = new System.Drawing.Point(223, 40);
+            this.frmBranchRevenueReport1.Name = "frmBranchRevenueReport1";
+            this.frmBranchRevenueReport1.Size = new System.Drawing.Size(675, 550);
+            this.frmBranchRevenueReport1.TabIndex = 7;
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 908);
+            this.ClientSize = new System.Drawing.Size(900, 575);
+            this.Controls.Add(this.frmBranchRevenueReport1);
             this.Controls.Add(this.frmRentalDetails1);
             this.Controls.Add(this.frmRental1);
             this.Controls.Add(this.frmGame1);
@@ -235,7 +249,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.HelpButton = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
@@ -265,6 +278,8 @@
         private FrmGame frmGame1;
         private FrmRental frmRental1;
         private FrmRentalDetails frmRentalDetails1;
+        private System.Windows.Forms.Button btnBranchRevenue;
+        private FrmBranchRevenueReport frmBranchRevenueReport1;
     }
 }
 
