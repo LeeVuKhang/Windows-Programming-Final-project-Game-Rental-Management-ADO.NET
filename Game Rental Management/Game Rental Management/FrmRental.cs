@@ -119,16 +119,20 @@ namespace Game_Rental_Management
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtRentalID.Text) || string.IsNullOrWhiteSpace(txtCustomerID.Text) ||
-                 string.IsNullOrWhiteSpace(txtTotalCost.Text) || string.IsNullOrWhiteSpace(txtBranchID.Text))
+            string.IsNullOrWhiteSpace(txtBranchID.Text))
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin (trừ Tổng chi phí).");
                 return;
             }
 
-            if (!decimal.TryParse(txtTotalCost.Text, out decimal totalCost) || totalCost < 0)
+            decimal totalCost = 0;
+            if (!string.IsNullOrWhiteSpace(txtTotalCost.Text))
             {
-                MessageBox.Show("Tổng chi phí phải là số không âm!");
-                return;
+                if (!decimal.TryParse(txtTotalCost.Text, out totalCost) || totalCost < 0)
+                {
+                    MessageBox.Show("Tổng chi phí phải là số không âm!");
+                    return;
+                }
             }
 
             if (dtpReturnDate.Value < dtpRentalDate.Value)
@@ -203,6 +207,51 @@ namespace Game_Rental_Management
             btnCancel.Enabled = false;
 
             dgvRENTAL_CellClick(null, null);
+        }
+
+        private void btnAddDetails_Click(object sender, EventArgs e)
+        {
+            if (this.ParentForm is FrmMain mainForm)
+            {
+                string rentalID = txtRentalID.Text.Trim();
+                DateTime rentalDate = dtpRentalDate.Value;
+                DateTime returnDate = dtpReturnDate.Value;
+
+                if (string.IsNullOrWhiteSpace(rentalID))
+                {
+                    MessageBox.Show("Vui lòng nhập RentalID trước.");
+                    return;
+                }
+
+                mainForm.OpenRentalDetailsWithContext(rentalID, rentalDate, returnDate);
+            }
+        }
+        private void UpdateTotalCost()
+        {
+            BLRentalDetails detailBL = new BLRentalDetails();
+            decimal totalCost = detailBL.GetTotalCostByRentalID(txtRentalID.Text);
+            txtTotalCost.Text = totalCost.ToString("0.00");
+        }
+
+        private void RecalculateTotal_Click(object sender, EventArgs e)
+        {
+            BLRentalDetails detailBL = new BLRentalDetails();
+            decimal totalCost = detailBL.GetTotalCostByRentalID(txtRentalID.Text);
+
+            txtTotalCost.Text = totalCost.ToString("0.00");
+
+            // Optional: auto update DB
+            dbRental.UpdateRental(
+                txtRentalID.Text,
+                txtCustomerID.Text,
+                dtpRentalDate.Value,
+                dtpReturnDate.Value,
+                totalCost,
+                txtBranchID.Text,
+                ref err
+            );
+            LoadData();
+            MessageBox.Show("Tổng chi phí đã được tính và cập nhật.");
         }
     }
 }

@@ -44,5 +44,13 @@ namespace Game_Rental_Management.BS_layer
                 "WHERE RentalID = '" + rentalID + "' AND GameID = '" + gameID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
+        public decimal GetTotalCostByRentalID(string rentalID)
+        {
+            string sql = $"SELECT SUM(Price) AS TotalCost FROM RentalDetails WHERE RentalID = '{rentalID}'";
+            var ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
+            if (ds.Tables[0].Rows.Count > 0 && ds.Tables[0].Rows[0]["TotalCost"] != DBNull.Value)
+                return Convert.ToDecimal(ds.Tables[0].Rows[0]["TotalCost"]);
+            return 0;
+        }
     }
 }

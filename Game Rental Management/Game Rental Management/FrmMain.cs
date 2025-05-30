@@ -112,5 +112,18 @@ namespace Game_Rental_Management
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        public void OpenRentalDetailsWithContext(string rentalID, DateTime rentalDate, DateTime returnDate)
+        {
+            // Optional: Highlight the correct button
+            btnRentalDetails_Click(null, null); // Simulate navigation
+
+            // Pass the context
+            frmRentalDetails1.LoadRentalContext(rentalID, rentalDate, returnDate);
+        }
     }
 }

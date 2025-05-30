@@ -47,6 +47,14 @@ namespace Game_Rental_Management.BS_layer
                 "WHERE GameID = '" + gameID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
+        public decimal GetPricePerDay(string gameID)
+        {
+            string sql = $"SELECT PricePerDay FROM Game WHERE GameID = '{gameID}'";
+            var ds = db.ExecuteQueryDataSet(sql, CommandType.Text);
+            if (ds.Tables[0].Rows.Count > 0)
+                return Convert.ToDecimal(ds.Tables[0].Rows[0]["PricePerDay"]);
+            return 0;
+        }
     }
 
 

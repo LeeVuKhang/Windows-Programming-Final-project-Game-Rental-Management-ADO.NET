@@ -17,12 +17,45 @@ namespace Game_Rental_Management
         DataTable dtRentalDetail = null;
         bool Them;
         string err;
+        BLGame gameBL = new BLGame();
+        DateTime rentalDate;
+        DateTime returnDate;
         BLRentalDetails dbRentalDetail = new BLRentalDetails();
 
         public FrmRentalDetails()
         {
             InitializeComponent();
             LoadData();
+        }
+        public FrmRentalDetails(string rentalID, DateTime rentalDate, DateTime returnDate)
+        {
+            InitializeComponent();
+            this.rentalDate = rentalDate;
+            this.returnDate = returnDate;
+
+            txtRentalID.Text = rentalID;
+            txtRentalID.Enabled = true;
+
+            LoadData();
+        }
+        public void LoadRentalContext(string rentalID, DateTime rentalDate, DateTime returnDate)
+        {
+            txtRentalID.Text = rentalID;
+            txtRentalID.Enabled = true;
+
+            int days = (returnDate - rentalDate).Days;
+            if (days < 1) days = 1;
+
+            txtDaysRented.Text = days.ToString();
+
+            // Store for later if needed
+            this.rentalDate = rentalDate;
+            this.returnDate = returnDate;
+        }
+        public void SetRentalDates(DateTime rentalDate, DateTime returnDate)
+        {
+            this.rentalDate = rentalDate;
+            this.returnDate = returnDate;
         }
 
         private void dgvRENTALDETAIL_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -86,13 +119,14 @@ namespace Game_Rental_Management
             txtDaysRented.ResetText();
             txtPrice.ResetText();
 
+            
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
             btnAdd.Enabled = false;
             btnEdit.Enabled = false;
 
             // Removed txtRentalDetailID.Enabled and Focus
-            txtRentalID.Focus();
+            //txtRentalID.Focus();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -197,5 +231,25 @@ namespace Game_Rental_Management
         {
             LoadData();
         }
+
+        private void txtGameID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtGameID_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtGameID.Text)) return;
+
+            decimal pricePerDay = gameBL.GetPricePerDay(txtGameID.Text);
+            int days = (returnDate - rentalDate).Days;
+            if (days <= 0) days = 1;
+
+            decimal price = days * pricePerDay;
+
+            txtDaysRented.Text = days.ToString();
+            txtPrice.Text = price.ToString("0.00");
+        }
+
     }
 }
