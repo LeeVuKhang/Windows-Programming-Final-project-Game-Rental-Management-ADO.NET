@@ -22,6 +22,7 @@ namespace Game_Rental_Management
             frmRentalDetails1.Hide();
             frmRental1.Hide();
             frmBranchRevenueReport1.Hide();
+            frmGameRevenueReport1.Hide();
         }
 
         private void lblExit_Click(object sender, EventArgs e)
@@ -41,6 +42,7 @@ namespace Game_Rental_Management
             frmRentalDetails1.Hide();
             frmRental1.Hide();
             frmBranchRevenueReport1.Hide();
+            frmGameRevenueReport1.Hide();
         }
 
         private void btnGame_Click(object sender, EventArgs e)
@@ -55,6 +57,8 @@ namespace Game_Rental_Management
             frmRentalDetails1.Hide();
             frmRental1.Hide();
             frmBranchRevenueReport1.Hide();
+            frmGameRevenueReport1.Hide();
+
         }
 
         private void btnRental_Click(object sender, EventArgs e)
@@ -69,6 +73,7 @@ namespace Game_Rental_Management
             frmRentalDetails1.Hide();
             frmRental1.Show();
             frmBranchRevenueReport1.Hide();
+            frmGameRevenueReport1.Hide();
         }
 
         private void btnRentalDetails_Click(object sender, EventArgs e)
@@ -83,8 +88,9 @@ namespace Game_Rental_Management
             frmRentalDetails1.Show();
             frmRental1.Hide();
             frmBranchRevenueReport1.Hide();
+            frmGameRevenueReport1.Hide();
         }
-           //skibidi
+        //skibidi
         private void btnBranch_Click(object sender, EventArgs e)
         {
             btnBranch.BackColor = Color.RoyalBlue;
@@ -97,6 +103,7 @@ namespace Game_Rental_Management
             frmRentalDetails1.Hide();
             frmRental1.Hide();
             frmBranchRevenueReport1.Hide();
+            frmGameRevenueReport1.Hide();
         }
         private void btnBranchRevenue_Click(object sender, EventArgs e)
         {
@@ -110,6 +117,7 @@ namespace Game_Rental_Management
             frmCustomer1.Hide();
             frmRentalDetails1.Hide();
             frmRental1.Hide();
+            frmGameRevenueReport1.Hide();
         }
         private void FrmMain_Load(object sender, EventArgs e)
         {
@@ -144,6 +152,19 @@ namespace Game_Rental_Management
             frmRentalDetails1.LoadRentalContext(rentalID, rentalDate, returnDate);
         }
 
-     
+        private void btnGameRevenue_Click(object sender, EventArgs e)
+        {
+            btnGameRevenue.BackColor = Color.RoyalBlue;
+            btnRentalDetails.BackColor = btnRental.BackColor = btnBranch.BackColor =
+                 btnBranchRevenue.BackColor = btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
+
+            frmGameRevenueReport1.Show();
+            frmBranch1.Hide();
+            frmGame1.Hide();
+            frmCustomer1.Hide();
+            frmRentalDetails1.Hide();
+            frmRental1.Hide();
+            frmBranchRevenueReport1.Hide();
+        }
     }
 }

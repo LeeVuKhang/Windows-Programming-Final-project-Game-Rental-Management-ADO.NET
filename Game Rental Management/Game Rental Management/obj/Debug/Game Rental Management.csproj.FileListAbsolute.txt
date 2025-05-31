@@ -72,3 +72,6 @@ C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\AD
 C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\ADO.NET vesions\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmRentalDetails.resources
 D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmBranchRevenueReport.resources
 D:\College\_hk4\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmCustomerSearch.resources
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmBranchRevenueReport.resources
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmCustomerSearch.resources
+C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmGameRevenueReport.resources

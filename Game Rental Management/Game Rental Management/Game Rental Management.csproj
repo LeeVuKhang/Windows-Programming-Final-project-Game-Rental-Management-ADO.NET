@@ -51,6 +51,7 @@
     <Compile Include="BS layer\BLBranchRevenue.cs" />
     <Compile Include="BS layer\BLCustomer.cs" />
     <Compile Include="BS layer\BLGame.cs" />
+    <Compile Include="BS layer\BLGameRevenue.cs" />
     <Compile Include="BS layer\BLRental.cs" />
     <Compile Include="BS layer\BLRentalDetails.cs" />
     <Compile Include="DB layer\DBMain.cs" />
@@ -71,6 +72,12 @@
     </Compile>
     <Compile Include="FrmGame.Designer.cs">
       <DependentUpon>FrmGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGameRevenueReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmGameRevenueReport.Designer.cs">
+      <DependentUpon>FrmGameRevenueReport.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -118,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGame.resx">
       <DependentUpon>FrmGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGameRevenueReport.resx">
+      <DependentUpon>FrmGameRevenueReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
