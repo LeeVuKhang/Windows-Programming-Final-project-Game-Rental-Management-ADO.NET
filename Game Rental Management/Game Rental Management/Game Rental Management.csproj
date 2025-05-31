@@ -60,6 +60,12 @@
     <Compile Include="FrmBranchRevenueReport.Designer.cs">
       <DependentUpon>FrmBranchRevenueReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCustomerSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerSearch.Designer.cs">
+      <DependentUpon>FrmCustomerSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGame.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCustomer.resx">
       <DependentUpon>FrmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerSearch.resx">
+      <DependentUpon>FrmCustomerSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGame.resx">
       <DependentUpon>FrmGame.cs</DependentUpon>

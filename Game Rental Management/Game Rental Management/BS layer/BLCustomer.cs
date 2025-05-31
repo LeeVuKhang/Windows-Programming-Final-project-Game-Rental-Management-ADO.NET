@@ -45,6 +45,24 @@ namespace Game_Rental_Management.BS_layer
                 "WHERE CustomerID = '" + customerID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
+        public DataSet GetCustomerRentalHistory(string customerID)
+        {
+            string sql = $@"
+        SELECT 
+            R.RentalID,
+            G.Title AS GameTitle,
+            R.RentalDate,
+            R.ReturnDate,
+            RD.DaysRented,
+            RD.Price
+        FROM Rental R
+        INNER JOIN RentalDetails RD ON R.RentalID = RD.RentalID
+        INNER JOIN Game G ON RD.GameID = G.GameID
+        WHERE R.CustomerID = '{customerID}'
+        ORDER BY R.RentalDate DESC";
+
+            return db.ExecuteQueryDataSet(sql, CommandType.Text);
+        }
     }
 
 }
