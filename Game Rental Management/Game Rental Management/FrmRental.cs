@@ -1,7 +1,9 @@
 ﻿using Game_Rental_Management.BS_layer;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Game_Rental_Management
@@ -47,12 +49,12 @@ namespace Game_Rental_Management
                 dtRental = ds.Tables[0];
 
                 dgvRENTAL.DataSource = dtRental;
-                dgvRENTAL.Columns[0].Width = 80;   // RentalID
-                dgvRENTAL.Columns[1].Width = 100;  // CustomerID
-                dgvRENTAL.Columns[2].Width = 120;  // RentalDate
-                dgvRENTAL.Columns[3].Width = 120;  // ReturnDate
+                dgvRENTAL.Columns[0].Width = 85;   // RentalID
+                dgvRENTAL.Columns[1].Width = 85;  // CustomerID
+                dgvRENTAL.Columns[2].Width = 85;  // RentalDate
+                dgvRENTAL.Columns[3].Width = 85;  // ReturnDate
                 dgvRENTAL.Columns[4].Width = 100;  // TotalCost
-                dgvRENTAL.Columns[5].Width = 100;  // BranchID
+                dgvRENTAL.Columns[5].Width = 85;  // BranchID
 
                 // Reset fields
                 txtRentalID.ResetText();
@@ -68,6 +70,33 @@ namespace Game_Rental_Management
                 btnAdd.Enabled = true;
                 btnEdit.Enabled = true;
 
+                var RentalID = dtRental.AsEnumerable()
+                                       .Where(row => !row.IsNull("RentalID"))
+                                       .Select(row => row.Field<string>("RentalID"))
+                                       .Distinct()
+                                       .OrderBy(g => g)
+                                       .ToList();
+
+                var CustomerID = dtRental.AsEnumerable()
+                         .Where(row => !row.IsNull("CustomerID"))
+                         .Select(row => row.Field<string>("CustomerID"))
+                         .Distinct()
+                         .OrderBy(p => p)
+                         .ToList();
+
+                var BranchID = dtRental.AsEnumerable()
+                                       .Where(row => !row.IsNull("BranchID"))
+                                       .Select(row => row.Field<string>("BranchID"))
+                                       .Distinct()
+                                       .OrderBy(g => g)
+                                       .ToList();
+
+                RentalID.Insert(0, "All");
+                CustomerID.Insert(0, "All");
+                BranchID.Insert(0, "All");
+                cboRID.DataSource = RentalID;
+                cboCID.DataSource = CustomerID;
+                cboBID.DataSource = BranchID;
                 if (dgvRENTAL.CurrentRow != null && dgvRENTAL.Rows.Count > 0)
                     dgvRENTAL_CellClick(null, null);
             }
@@ -260,6 +289,38 @@ namespace Game_Rental_Management
 
         private void txtTotalCost_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string rid = cboRID.SelectedItem?.ToString() ?? "All";
+            string cid = cboCID.SelectedItem?.ToString() ?? "All";
+            string bid = cboBID.SelectedItem?.ToString() ?? "All";
+
+            DataView dv = new DataView(dtRental);
+
+            List<string> filters = new List<string>();
+
+            if (rid != "All")
+            {
+                filters.Add($"RentalID = '{rid.Replace("'", "''")}'");
+            }
+
+            if (cid != "All")
+            {
+                filters.Add($"CustomerID = '{cid.Replace("'", "''")}'");
+            }
+
+            if (bid != "All")
+            {
+                filters.Add($"BranchID = '{bid.Replace("'", "''")}'");
+            }
+
+            string finalFilter = string.Join(" AND ", filters);
+
+            dv.RowFilter = finalFilter;
+            dgvRENTAL.DataSource = dv;
 
         }
     }

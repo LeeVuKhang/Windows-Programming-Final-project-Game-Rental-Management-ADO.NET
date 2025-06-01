@@ -108,6 +108,7 @@
             this.Controls.Add(this.dtpFromDate);
             this.Controls.Add(this.btnGenerate);
             this.Name = "FrmGameReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmGameReport";
             this.Load += new System.EventHandler(this.FrmGameReport_Load);
             this.ResumeLayout(false);

@@ -41,6 +41,7 @@
             this.btnGame = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnBranch = new System.Windows.Forms.Button();
+            this.lblLogout = new System.Windows.Forms.Label();
             this.frmRentalDetails1 = new Game_Rental_Management.FrmRentalDetails();
             this.frmRental1 = new Game_Rental_Management.FrmRental();
             this.frmGame1 = new Game_Rental_Management.FrmGame();
@@ -88,6 +89,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
+            this.panel2.Controls.Add(this.lblLogout);
             this.panel2.Controls.Add(this.btnCustomerReport);
             this.panel2.Controls.Add(this.btnGameRevenue);
             this.panel2.Controls.Add(this.btnBranchRevenue);
@@ -216,6 +218,18 @@
             this.btnBranch.UseVisualStyleBackColor = false;
             this.btnBranch.Click += new System.EventHandler(this.btnBranch_Click);
             // 
+            // lblLogout
+            // 
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogout.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblLogout.Location = new System.Drawing.Point(12, 509);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(59, 15);
+            this.lblLogout.TabIndex = 9;
+            this.lblLogout.Text = "<<Logout";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
+            // 
             // frmRentalDetails1
             // 
             this.frmRentalDetails1.Location = new System.Drawing.Point(223, 40);
@@ -269,6 +283,7 @@
             this.Controls.Add(this.frmBranch1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -277,6 +292,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -302,6 +318,7 @@
         private System.Windows.Forms.Button btnBranchRevenue;
         private System.Windows.Forms.Button btnGameRevenue;
         private System.Windows.Forms.Button btnCustomerReport;
+        private System.Windows.Forms.Label lblLogout;
     }
 }
 

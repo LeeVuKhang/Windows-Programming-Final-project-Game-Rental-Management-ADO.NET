@@ -26,7 +26,7 @@ namespace Game_Rental_Management
 
         private void lblExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -165,5 +165,25 @@ namespace Game_Rental_Management
             FrmCustomerReport CustomerReport = new FrmCustomerReport();
             CustomerReport.ShowDialog();
         }
+
+        private void lblLogout_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.Hide(); 
+                    FrmLogin loginForm = new FrmLogin();
+                    loginForm.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while logging out: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

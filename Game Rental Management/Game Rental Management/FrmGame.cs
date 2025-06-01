@@ -38,9 +38,9 @@ namespace Game_Rental_Management
                 dgvGAME.DataSource = dtGame;
                 dgvGAME.Columns[0].Width = 80;   // GameID
                 dgvGAME.Columns[1].Width = 150;  // Title
-                dgvGAME.Columns[2].Width = 100;  // Platform
-                dgvGAME.Columns[3].Width = 120;  // Genre
-                dgvGAME.Columns[4].Width = 100;  // PricePerDay
+                dgvGAME.Columns[2].Width = 80;  // Platform
+                dgvGAME.Columns[3].Width = 80;  // Genre
+                dgvGAME.Columns[4].Width = 80;  // PricePerDay
                 dgvGAME.Columns[5].Width = 80;   // Status
                 dgvGAME.Columns[6].Width = 80;   // BranchID
 
