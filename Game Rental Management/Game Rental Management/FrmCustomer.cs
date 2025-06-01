@@ -65,7 +65,7 @@ namespace Game_Rental_Management
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Không lấy được dữ liệu Customer: {ex.Message}");
+                MessageBox.Show($"Cannot retrieve Customer data: {ex.Message}");
             }
         }
         private void dgvCUSTOMER_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -132,7 +132,7 @@ namespace Game_Rental_Management
                 string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPhone.Text) ||
                 string.IsNullOrWhiteSpace(txtAddress.Text))
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                MessageBox.Show("Please fill in all required information!");
                 return;
             }
 
@@ -151,11 +151,11 @@ namespace Game_Rental_Management
                     if (success)
                     {
                         LoadData();
-                        MessageBox.Show("Đã thêm khách hàng mới!");
+                        MessageBox.Show("New customer added successfully!");
                     }
                     else
                     {
-                        MessageBox.Show($"Lỗi khi thêm khách hàng: {err}");
+                        MessageBox.Show($"Error while adding customer: {err}");
                     }
                 }
                 else
@@ -171,17 +171,17 @@ namespace Game_Rental_Management
                     if (success)
                     {
                         LoadData();
-                        MessageBox.Show("Đã cập nhật thông tin khách hàng!");
+                        MessageBox.Show("Customer information updated successfully!");
                     }
                     else
                     {
-                        MessageBox.Show($"Lỗi khi cập nhật khách hàng: {err}");
+                        MessageBox.Show($"Error while updating customer: {err}");
                     }
                 }
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Lỗi: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 

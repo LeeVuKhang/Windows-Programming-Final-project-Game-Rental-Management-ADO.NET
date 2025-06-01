@@ -82,7 +82,7 @@ namespace Game_Rental_Management
             }
             catch (SqlException)
             {
-                MessageBox.Show("Không lấy được dữ liệu Game. Lỗi rồi!!!");
+                MessageBox.Show("Unable to retrieve game data. An error has occurred!");
             }
         }
 
@@ -149,13 +149,13 @@ namespace Game_Rental_Management
         string.IsNullOrWhiteSpace(txtPlatform.Text) || string.IsNullOrWhiteSpace(txtGenre.Text) ||
         string.IsNullOrWhiteSpace(txtPricePerDay.Text) || string.IsNullOrWhiteSpace(txtBranchID.Text))
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                MessageBox.Show("Please fill in all required information!");
                 return;
             }
 
             if (!decimal.TryParse(txtPricePerDay.Text, out decimal pricePerDay) || pricePerDay < 0)
             {
-                MessageBox.Show("Giá thuê mỗi ngày phải là số không âm!");
+                MessageBox.Show("The daily rental price must be a non-negative number!");
                 return;
             }
 
@@ -176,11 +176,11 @@ namespace Game_Rental_Management
                     if (success)
                     {
                         LoadData();
-                        MessageBox.Show("Đã thêm game mới!");
+                        MessageBox.Show("New game added successfully!");
                     }
                     else
                     {
-                        MessageBox.Show($"Lỗi khi thêm game: {err}");
+                        MessageBox.Show($"Error adding game: {err}");
                     }
                 }
                 else
@@ -198,17 +198,17 @@ namespace Game_Rental_Management
                     if (success)
                     {
                         LoadData();
-                        MessageBox.Show("Đã cập nhật thông tin game!");
+                        MessageBox.Show("Game information updated successfully!");
                     }
                     else
                     {
-                        MessageBox.Show($"Lỗi khi cập nhật game: {err}");
+                        MessageBox.Show($"Error updating game: {err}");
                     }
                 }
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Lỗi SQL: {ex.Message}");
+                MessageBox.Show($"SQL Error: {ex.Message}");
             }
         }
 

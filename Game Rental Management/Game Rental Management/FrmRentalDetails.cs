@@ -115,7 +115,7 @@ namespace Game_Rental_Management
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Không lấy được dữ liệu chi tiết thuê: {ex.Message}");
+                MessageBox.Show($"Failed to retrieve rental details: {ex.Message}");
             }
         }
 
@@ -150,19 +150,19 @@ namespace Game_Rental_Management
             if (string.IsNullOrWhiteSpace(txtRentalID.Text) || string.IsNullOrWhiteSpace(txtGameID.Text) ||
                  string.IsNullOrWhiteSpace(txtDaysRented.Text) || string.IsNullOrWhiteSpace(txtPrice.Text))
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                MessageBox.Show("Please fill in all required fields.");
                 return;
             }
 
             if (!int.TryParse(txtDaysRented.Text, out int daysRented) || daysRented <= 0)
             {
-                MessageBox.Show("Số ngày thuê phải là số nguyên dương!");
+                MessageBox.Show("Days rented must be a positive integer.");
                 return;
             }
 
             if (!decimal.TryParse(txtPrice.Text, out decimal price) || price < 0)
             {
-                MessageBox.Show("Giá phải là số không âm!");
+                MessageBox.Show("Price must be a non-negative number.");
                 return;
             }
 
@@ -180,11 +180,11 @@ namespace Game_Rental_Management
                     if (success)
                     {
                         LoadData();
-                        MessageBox.Show("Đã thêm chi tiết thuê mới!");
+                        MessageBox.Show("Rental detail added successfully.");
                     }
                     else
                     {
-                        MessageBox.Show($"Lỗi khi thêm chi tiết thuê: {err}");
+                        MessageBox.Show($"Failed to add rental detail: {err}");
                     }
                     dgvRENTALDETAIL.Enabled = true;
                 }
@@ -201,17 +201,17 @@ namespace Game_Rental_Management
                     if (success)
                     {
                         LoadData();
-                        MessageBox.Show("Đã cập nhật chi tiết thuê!");
+                        MessageBox.Show("Rental detail updated successfully.");
                     }
                     else
                     {
-                        MessageBox.Show($"Lỗi khi cập nhật chi tiết thuê: {err}");
+                        MessageBox.Show($"Failed to update rental detail: {err}");
                     }
                 }
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Lỗi: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 

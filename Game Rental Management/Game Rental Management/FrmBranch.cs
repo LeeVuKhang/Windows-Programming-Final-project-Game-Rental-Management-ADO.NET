@@ -65,7 +65,7 @@ namespace Game_Rental_Management
             }
             catch (SqlException)
             {
-                MessageBox.Show("Không lấy được dữ liệu Branch. Lỗi rồi!!!");
+                MessageBox.Show("Failed to retrieve branch data. An error occurred!");
             }
         }
 
@@ -80,11 +80,12 @@ namespace Game_Rental_Management
                     blB.AddBranch(this.txtBranchID.Text, this.txtBranchName.Text,
                                    this.txtAddress.Text, this.txtPhone.Text, ref err);
                     LoadData();
-                    MessageBox.Show("Đã thêm chi nhánh mới!");
+                    MessageBox.Show("New branch added successfully!");
+
                 }
                 catch (SqlException)
                 {
-                    MessageBox.Show("Lỗi khi thêm dữ liệu.");
+                    MessageBox.Show("Error occurred while adding data.");
                 }
             }
             else
@@ -93,7 +94,7 @@ namespace Game_Rental_Management
                 blB.UpdateBranch(this.txtBranchID.Text, this.txtBranchName.Text,
                                   this.txtAddress.Text, this.txtPhone.Text, ref err);
                 LoadData();
-                MessageBox.Show("Đã cập nhật chi nhánh!");
+                MessageBox.Show("Branch updated successfully!");
             }
         }
 

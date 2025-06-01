@@ -102,7 +102,7 @@ namespace Game_Rental_Management
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Không lấy được dữ liệu Rental: {ex.Message}");
+                MessageBox.Show($"Failed to retrieve rental data: {ex.Message}");
             }
         }
 
@@ -151,7 +151,7 @@ namespace Game_Rental_Management
             if (string.IsNullOrWhiteSpace(txtRentalID.Text) || string.IsNullOrWhiteSpace(txtCustomerID.Text) ||
             string.IsNullOrWhiteSpace(txtBranchID.Text))
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin (trừ Tổng chi phí).");
+                MessageBox.Show("Please fill in all required fields (except Total Cost).");
                 return;
             }
 
@@ -160,14 +160,14 @@ namespace Game_Rental_Management
             {
                 if (!decimal.TryParse(txtTotalCost.Text, out totalCost) || totalCost < 0)
                 {
-                    MessageBox.Show("Tổng chi phí phải là số không âm!");
+                    MessageBox.Show("Total cost must be a non-negative number!");
                     return;
                 }
             }
 
             if (dtpReturnDate.Value < dtpRentalDate.Value)
             {
-                MessageBox.Show("Ngày trả phải sau ngày thuê!");
+                MessageBox.Show("Return date must be after rental date!");
                 return;
             }
 
@@ -187,11 +187,11 @@ namespace Game_Rental_Management
                     if (success)
                     {
                         LoadData();
-                        MessageBox.Show("Đã thêm đơn thuê mới!");
+                        MessageBox.Show("New rental added successfully!");
                     }
                     else
                     {
-                        MessageBox.Show($"Lỗi khi thêm đơn thuê: {err}");
+                        MessageBox.Show($"Failed to add rental: {err}");
                     }
                 }
                 else
@@ -208,17 +208,17 @@ namespace Game_Rental_Management
                     if (success)
                     {
                         LoadData();
-                        MessageBox.Show("Đã cập nhật thông tin đơn thuê!");
+                        MessageBox.Show("Rental information updated successfully!");
                     }
                     else
                     {
-                        MessageBox.Show($"Lỗi khi cập nhật đơn thuê: {err}");
+                        MessageBox.Show($"Failed to update rental: {err}");
                     }
                 }
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Lỗi: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -250,7 +250,7 @@ namespace Game_Rental_Management
 
                 if (string.IsNullOrWhiteSpace(rentalID))
                 {
-                    MessageBox.Show("Vui lòng nhập RentalID trước.");
+                    MessageBox.Show("Please enter a Rental ID first.");
                     return;
                 }
 
@@ -284,7 +284,7 @@ namespace Game_Rental_Management
                 ref err
             );
             LoadData();
-            MessageBox.Show("Tổng chi phí đã được tính và cập nhật.");
+            MessageBox.Show("Total cost has been calculated and updated.");
         }
 
         private void txtTotalCost_TextChanged(object sender, EventArgs e)
