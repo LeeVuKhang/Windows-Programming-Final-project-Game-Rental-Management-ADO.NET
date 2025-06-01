@@ -89,11 +89,11 @@
     <Compile Include="FrmGame.Designer.cs">
       <DependentUpon>FrmGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmGameRevenueReport.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="FrmGameReport.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmGameRevenueReport.Designer.cs">
-      <DependentUpon>FrmGameRevenueReport.cs</DependentUpon>
+    <Compile Include="FrmGameReport.Designer.cs">
+      <DependentUpon>FrmGameReport.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -154,8 +154,8 @@
     <EmbeddedResource Include="FrmGame.resx">
       <DependentUpon>FrmGame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmGameRevenueReport.resx">
-      <DependentUpon>FrmGameRevenueReport.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGameReport.resx">
+      <DependentUpon>FrmGameReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -165,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRentalDetails.resx">
       <DependentUpon>FrmRentalDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameRevenueReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

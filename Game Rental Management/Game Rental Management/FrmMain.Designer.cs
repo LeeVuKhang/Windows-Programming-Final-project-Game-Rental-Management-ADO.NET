@@ -46,7 +46,6 @@
             this.frmGame1 = new Game_Rental_Management.FrmGame();
             this.frmCustomer1 = new Game_Rental_Management.FrmCustomer();
             this.frmBranch1 = new Game_Rental_Management.FrmBranch();
-            this.frmGameRevenueReport1 = new Game_Rental_Management.FrmGameRevenueReport();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -157,11 +156,11 @@
             this.btnRentalDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.btnRentalDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRentalDetails.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRentalDetails.Location = new System.Drawing.Point(-3, 280);
+            this.btnRentalDetails.Location = new System.Drawing.Point(-3, 240);
             this.btnRentalDetails.Name = "btnRentalDetails";
             this.btnRentalDetails.Size = new System.Drawing.Size(225, 40);
             this.btnRentalDetails.TabIndex = 4;
-            this.btnRentalDetails.Text = "RENTAL DETAILS";
+            this.btnRentalDetails.Text = "RENTAL ";
             this.btnRentalDetails.UseVisualStyleBackColor = false;
             this.btnRentalDetails.Click += new System.EventHandler(this.btnRentalDetails_Click);
             // 
@@ -170,11 +169,11 @@
             this.btnRental.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.btnRental.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRental.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRental.Location = new System.Drawing.Point(0, 240);
+            this.btnRental.Location = new System.Drawing.Point(0, 280);
             this.btnRental.Name = "btnRental";
             this.btnRental.Size = new System.Drawing.Size(225, 40);
             this.btnRental.TabIndex = 3;
-            this.btnRental.Text = "RENTAL";
+            this.btnRental.Text = "RENTAL DETAILS";
             this.btnRental.UseVisualStyleBackColor = false;
             this.btnRental.Click += new System.EventHandler(this.btnRental_Click);
             // 
@@ -258,20 +257,11 @@
             this.frmBranch1.Size = new System.Drawing.Size(675, 550);
             this.frmBranch1.TabIndex = 2;
             // 
-            // frmGameRevenueReport1
-            // 
-            this.frmGameRevenueReport1.Location = new System.Drawing.Point(223, 40);
-            this.frmGameRevenueReport1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.frmGameRevenueReport1.Name = "frmGameRevenueReport1";
-            this.frmGameRevenueReport1.Size = new System.Drawing.Size(675, 550);
-            this.frmGameRevenueReport1.TabIndex = 8;
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 575);
-            this.Controls.Add(this.frmGameRevenueReport1);
             this.Controls.Add(this.frmRentalDetails1);
             this.Controls.Add(this.frmRental1);
             this.Controls.Add(this.frmGame1);
@@ -310,7 +300,6 @@
         private FrmRental frmRental1;
         private FrmRentalDetails frmRentalDetails1;
         private System.Windows.Forms.Button btnBranchRevenue;
-        private FrmGameRevenueReport frmGameRevenueReport1;
         private System.Windows.Forms.Button btnGameRevenue;
         private System.Windows.Forms.Button btnCustomerReport;
     }

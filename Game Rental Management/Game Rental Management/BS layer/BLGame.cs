@@ -83,6 +83,31 @@ namespace Game_Rental_Management.BS_layer
 
             return db.ExecuteQueryDataSet(query, CommandType.Text, parameters);
         }
+        public DataTable GetRevenueData(DateTime fromDate, DateTime toDate)
+        {
+            string query = @"
+            SELECT 
+                g.GameID, 
+                g.Title, 
+                ISNULL(SUM(rd.Price), 0) AS Revenue
+            FROM 
+                Game g
+            LEFT JOIN 
+                RentalDetails rd ON g.GameID = rd.GameID
+            LEFT JOIN 
+                Rental r ON rd.RentalID = r.RentalID 
+                          AND r.RentalDate BETWEEN @FromDate AND @ToDate
+            GROUP BY 
+                g.GameID, g.Title";
+
+                    SqlParameter[] parameters = {
+                new SqlParameter("@FromDate", fromDate),
+                new SqlParameter("@ToDate", toDate)
+            };
+
+            return db.ExecuteQuery(query, CommandType.Text, parameters);
+        }
+
 
     }
 
