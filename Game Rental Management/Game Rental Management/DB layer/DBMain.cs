@@ -66,6 +66,25 @@ namespace Game_Rental_Management.DB_layer
             conn.Close();
             return ds;
         }
+        public DataTable ExecuteQuery(string strSQL, CommandType ct, SqlParameter[] parameters)
+        {
+            DataTable dt = new DataTable();
+            if (conn.State == ConnectionState.Open)
+                conn.Close();
+            conn.Open();
+
+            comm.Parameters.Clear(); // Xóa tham số cũ nếu có
+            comm.CommandText = strSQL;
+            comm.CommandType = ct;
+            comm.Connection = conn;
+
+            if (parameters != null)
+                comm.Parameters.AddRange(parameters);
+
+            da = new SqlDataAdapter(comm);
+            da.Fill(dt);
+            return dt;
+        }
 
 
         public bool MyExecuteNonQuery(string strSQL, CommandType ct, ref string error)

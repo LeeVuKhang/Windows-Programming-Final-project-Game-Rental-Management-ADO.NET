@@ -32,6 +32,7 @@
             this.lblExit = new System.Windows.Forms.Label();
             this.lblFormtxt = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCustomerReport = new System.Windows.Forms.Button();
             this.btnGameRevenue = new System.Windows.Forms.Button();
             this.btnBranchRevenue = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -40,14 +41,12 @@
             this.btnGame = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnBranch = new System.Windows.Forms.Button();
-            this.frmBranchRevenueReport1 = new Game_Rental_Management.FrmBranchRevenueReport();
             this.frmRentalDetails1 = new Game_Rental_Management.FrmRentalDetails();
             this.frmRental1 = new Game_Rental_Management.FrmRental();
             this.frmGame1 = new Game_Rental_Management.FrmGame();
             this.frmCustomer1 = new Game_Rental_Management.FrmCustomer();
             this.frmBranch1 = new Game_Rental_Management.FrmBranch();
             this.frmGameRevenueReport1 = new Game_Rental_Management.FrmGameRevenueReport();
-            this.btnCustomerReport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,6 +103,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(225, 535);
             this.panel2.TabIndex = 1;
+            // 
+            // btnCustomerReport
+            // 
+            this.btnCustomerReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
+            this.btnCustomerReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCustomerReport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCustomerReport.Location = new System.Drawing.Point(-3, 400);
+            this.btnCustomerReport.Name = "btnCustomerReport";
+            this.btnCustomerReport.Size = new System.Drawing.Size(225, 40);
+            this.btnCustomerReport.TabIndex = 8;
+            this.btnCustomerReport.Text = "CUSTOMER REPORT";
+            this.btnCustomerReport.UseVisualStyleBackColor = false;
+            this.btnCustomerReport.Click += new System.EventHandler(this.btnCustomerReport_Click);
             // 
             // btnGameRevenue
             // 
@@ -205,14 +217,6 @@
             this.btnBranch.UseVisualStyleBackColor = false;
             this.btnBranch.Click += new System.EventHandler(this.btnBranch_Click);
             // 
-            // frmBranchRevenueReport1
-            // 
-            this.frmBranchRevenueReport1.Location = new System.Drawing.Point(223, 40);
-            this.frmBranchRevenueReport1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.frmBranchRevenueReport1.Name = "frmBranchRevenueReport1";
-            this.frmBranchRevenueReport1.Size = new System.Drawing.Size(675, 550);
-            this.frmBranchRevenueReport1.TabIndex = 7;
-            // 
             // frmRentalDetails1
             // 
             this.frmRentalDetails1.Location = new System.Drawing.Point(223, 40);
@@ -249,7 +253,7 @@
             // frmBranch1
             // 
             this.frmBranch1.Location = new System.Drawing.Point(223, 40);
-            this.frmBranch1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.frmBranch1.Margin = new System.Windows.Forms.Padding(4);
             this.frmBranch1.Name = "frmBranch1";
             this.frmBranch1.Size = new System.Drawing.Size(675, 550);
             this.frmBranch1.TabIndex = 2;
@@ -262,25 +266,11 @@
             this.frmGameRevenueReport1.Size = new System.Drawing.Size(675, 550);
             this.frmGameRevenueReport1.TabIndex = 8;
             // 
-            // btnCustomerReport
-            // 
-            this.btnCustomerReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
-            this.btnCustomerReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCustomerReport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCustomerReport.Location = new System.Drawing.Point(-3, 400);
-            this.btnCustomerReport.Name = "btnCustomerReport";
-            this.btnCustomerReport.Size = new System.Drawing.Size(225, 40);
-            this.btnCustomerReport.TabIndex = 8;
-            this.btnCustomerReport.Text = "CUSTOMER REPORT";
-            this.btnCustomerReport.UseVisualStyleBackColor = false;
-            this.btnCustomerReport.Click += new System.EventHandler(this.btnCustomerReport_Click);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 575);
-            this.Controls.Add(this.frmBranchRevenueReport1);
             this.Controls.Add(this.frmGameRevenueReport1);
             this.Controls.Add(this.frmRentalDetails1);
             this.Controls.Add(this.frmRental1);
@@ -320,7 +310,6 @@
         private FrmRental frmRental1;
         private FrmRentalDetails frmRentalDetails1;
         private System.Windows.Forms.Button btnBranchRevenue;
-        private FrmBranchRevenueReport frmBranchRevenueReport1;
         private FrmGameRevenueReport frmGameRevenueReport1;
         private System.Windows.Forms.Button btnGameRevenue;
         private System.Windows.Forms.Button btnCustomerReport;

@@ -71,11 +71,11 @@
     <Compile Include="BS layer\BLRental.cs" />
     <Compile Include="BS layer\BLRentalDetails.cs" />
     <Compile Include="DB layer\DBMain.cs" />
-    <Compile Include="FrmBranchRevenueReport.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="FrmBranchReport.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBranchRevenueReport.Designer.cs">
-      <DependentUpon>FrmBranchRevenueReport.cs</DependentUpon>
+    <Compile Include="FrmBranchReport.Designer.cs">
+      <DependentUpon>FrmBranchReport.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCustomerReport.cs">
       <SubType>Form</SubType>
@@ -136,11 +136,14 @@
       <DependentUpon>RentalReportDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="BranchRevenueReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBranch.resx">
       <DependentUpon>FrmBranch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBranchRevenueReport.resx">
-      <DependentUpon>FrmBranchRevenueReport.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBranchReport.resx">
+      <DependentUpon>FrmBranchReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCustomer.resx">
       <DependentUpon>FrmCustomer.cs</DependentUpon>

@@ -52,31 +52,30 @@ namespace Game_Rental_Management.BS_layer
                 "WHERE BranchID = '" + branchID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public DataSet GetRevenueData(string branchID, DateTime FromDate, DateTime ToDate)
+        public DataTable GetBranchRevenueReport(DateTime fromDate, DateTime toDate)
         {
             string query = @"
-            SELECT 
-                b.BranchID, 
-                b.BranchName, 
-                ISNULL(SUM(r.TotalCost), 0) AS Revenue
-            FROM 
-                Branch b
-            LEFT JOIN 
-                Rental r ON b.BranchID = r.BranchID 
-                          AND r.RentalDate BETWEEN @FromDate AND @ToDate
-            WHERE 
-                (@BranchID IS NULL OR b.BranchID = @BranchID)
-            GROUP BY 
-                b.BranchID, b.BranchName";
+        SELECT 
+            B.BranchID,
+            B.BranchName,
+            COUNT(DISTINCT R.RentalID) AS RentalsCount,
+            ISNULL(SUM(R.TotalCost), 0) AS TotalRevenue,
+            COUNT(RD.GameID) AS TotalGamesRented
+        FROM Branch B
+        LEFT JOIN Rental R ON R.BranchID = B.BranchID AND R.RentalDate BETWEEN @FromDate AND @ToDate
+        LEFT JOIN RentalDetails RD ON R.RentalID = RD.RentalID
+        GROUP BY B.BranchID, B.BranchName
+        ORDER BY TotalRevenue DESC";
 
-            SqlParameter[] parameters = {
-                new SqlParameter("@BranchID", (object)branchID ?? DBNull.Value),
-                new SqlParameter("@FromDate", FromDate),
-                new SqlParameter("@ToDate", ToDate)
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+        new SqlParameter("@FromDate", fromDate),
+        new SqlParameter("@ToDate", toDate)
             };
 
-            return db.ExecuteQueryDataSet(query, CommandType.Text, parameters);
+            return db.ExecuteQuery(query, CommandType.Text, parameters);
         }
+
 
     }
 }

@@ -143,7 +143,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!CustomerPhone.Value</Value>
+                                  <Value>=First(Fields!CustomerPhone.Value)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>

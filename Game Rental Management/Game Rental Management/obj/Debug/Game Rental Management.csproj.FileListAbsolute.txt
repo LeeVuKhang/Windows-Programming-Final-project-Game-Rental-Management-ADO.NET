@@ -133,7 +133,6 @@ D:\Test\Game Rental Management\Game Rental Management\bin\Debug\zh-CHS\Microsoft
 D:\Test\Game Rental Management\Game Rental Management\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.AssemblyReference.cache
 D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmBranch.resources
-D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmBranchRevenueReport.resources
 D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmCustomer.resources
 D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmGame.resources
 D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmGameRevenueReport.resources
@@ -148,3 +147,5 @@ D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Mana
 D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.pdb
 D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmCustomerReport.resources
 D:\Test\Game Rental Management\Game Rental Management\bin\Debug\CustomerRentalReport.rdlc
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmBranchReport.resources
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\BranchRevenueReport.rdlc
