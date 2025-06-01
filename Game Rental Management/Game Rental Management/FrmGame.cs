@@ -11,7 +11,7 @@ namespace Game_Rental_Management
     public partial class FrmGame : UserControl
     {
         DataTable dtGame = null;
-        bool Them; // Flag to indicate Add or Edit mode
+        bool Them; 
         string err;
         BLGame dbGame = new BLGame();
 

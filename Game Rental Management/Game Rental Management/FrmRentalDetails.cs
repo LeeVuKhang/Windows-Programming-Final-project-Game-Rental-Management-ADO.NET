@@ -14,6 +14,7 @@ namespace Game_Rental_Management
 {
     public partial class FrmRentalDetails : UserControl
     {
+        private string originalGameID;
         DataTable dtRentalDetail = null;
         bool Them;
         string err;
@@ -40,17 +41,28 @@ namespace Game_Rental_Management
         }
         public void LoadRentalContext(string rentalID, DateTime rentalDate, DateTime returnDate)
         {
+            Them = true;
             txtRentalID.Text = rentalID;
-            txtRentalID.Enabled = true;
+            txtRentalID.Enabled = false;
+            txtPrice.Enabled = false;
 
             int days = (returnDate - rentalDate).Days;
             if (days < 1) days = 1;
 
             txtDaysRented.Text = days.ToString();
+            txtDaysRented.Enabled = false;
 
             // Store for later if needed
             this.rentalDate = rentalDate;
             this.returnDate = returnDate;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+            btnEdit.Enabled = false;
+            
+
+            dgvRENTALDETAIL.Enabled = false;
+            dgvRENTALDETAIL.ClearSelection();
+
         }
         public void SetRentalDates(DateTime rentalDate, DateTime returnDate)
         {
@@ -62,11 +74,13 @@ namespace Game_Rental_Management
         {
             if (dgvRENTALDETAIL.CurrentRow != null && dgvRENTALDETAIL.Rows.Count > 0)
             {
+                
                 int r = dgvRENTALDETAIL.CurrentRow.Index;
                 txtRentalID.Text = dgvRENTALDETAIL.Rows[r].Cells["RentalID"].Value?.ToString() ?? "";
                 txtGameID.Text = dgvRENTALDETAIL.Rows[r].Cells["GameID"].Value?.ToString() ?? "";
                 txtDaysRented.Text = dgvRENTALDETAIL.Rows[r].Cells["DaysRented"].Value?.ToString() ?? "";
                 txtPrice.Text = dgvRENTALDETAIL.Rows[r].Cells["Price"].Value?.ToString() ?? "";
+                originalGameID = dgvRENTALDETAIL.Rows[r].Cells["GameID"].Value?.ToString() ?? "";
             }
         }
         void LoadData()
@@ -89,11 +103,12 @@ namespace Game_Rental_Management
                 txtGameID.ResetText();
                 txtDaysRented.ResetText();
                 txtPrice.ResetText();
+                txtPrice.Enabled = false;
 
                 btnSave.Enabled = false;
                 btnCancel.Enabled = false;
-                btnAdd.Enabled = true;
                 btnEdit.Enabled = true;
+
 
                 if (dgvRENTALDETAIL.CurrentRow != null && dgvRENTALDETAIL.Rows.Count > 0)
                     dgvRENTALDETAIL_CellClick(null, null);
@@ -111,22 +126,7 @@ namespace Game_Rental_Management
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Them = true;
-
-            // Removed RentalDetailID reset
-            txtRentalID.ResetText();
-            txtGameID.ResetText();
-            txtDaysRented.ResetText();
-            txtPrice.ResetText();
-
-            
-            btnSave.Enabled = true;
-            btnCancel.Enabled = true;
-            btnAdd.Enabled = false;
-            btnEdit.Enabled = false;
-
-            // Removed txtRentalDetailID.Enabled and Focus
-            //txtRentalID.Focus();
+           
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -137,8 +137,9 @@ namespace Game_Rental_Management
 
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
-            btnAdd.Enabled = false;
             btnEdit.Enabled = false;
+
+            txtDaysRented.Enabled = false;
 
             // No RentalDetailID to disable
             txtRentalID.Focus();
@@ -185,12 +186,14 @@ namespace Game_Rental_Management
                     {
                         MessageBox.Show($"Lỗi khi thêm chi tiết thuê: {err}");
                     }
+                    dgvRENTALDETAIL.Enabled = true;
                 }
                 else
                 {
                     bool success = dbRentalDetail.UpdateRentalDetail(
                         txtRentalID.Text,
-                        txtGameID.Text,
+                        originalGameID,          // ← old GameID
+                        txtGameID.Text,          // ← new GameID (user edited)
                         daysRented,
                         price,
                         ref err
@@ -219,7 +222,6 @@ namespace Game_Rental_Management
             txtDaysRented.ResetText();
             txtPrice.ResetText();
 
-            btnAdd.Enabled = true;
             btnEdit.Enabled = true;
             btnSave.Enabled = false;
             btnCancel.Enabled = false;

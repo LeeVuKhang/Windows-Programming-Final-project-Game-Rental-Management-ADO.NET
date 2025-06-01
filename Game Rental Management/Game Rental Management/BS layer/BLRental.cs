@@ -47,9 +47,10 @@ namespace Game_Rental_Management.BS_layer
                 "CustomerID = '" + customerID + "', " +
                 "RentalDate = '" + rentalDate.ToString("yyyy-MM-dd") + "', " +
                 "ReturnDate = '" + returnDate.ToString("yyyy-MM-dd") + "', " +
-                "TotalCost = " + totalCost + ", " +
+                "TotalCost = " + totalCost.ToString(System.Globalization.CultureInfo.InvariantCulture) + ", " +
                 "BranchID = '" + branchID + "' " +
                 "WHERE RentalID = '" + rentalID + "'";
+
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }

@@ -36,13 +36,15 @@ namespace Game_Rental_Management.BS_layer
         }
 
         // Update based on composite key RentalID and GameID
-        public bool UpdateRentalDetail(string rentalID, string gameID, int daysRented, decimal price, ref string err)
+        public bool UpdateRentalDetail(string rentalID, string originalGameID, string newGameID, int daysRented, decimal price, ref string err)
         {
-            string sqlString = "UPDATE RentalDetails SET " +
-                "DaysRented = " + daysRented + ", " +
-                "Price = " + price + " " +
-                "WHERE RentalID = '" + rentalID + "' AND GameID = '" + gameID + "'";
-            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+            string sql = "UPDATE RentalDetails SET " +
+                         "GameID = '" + newGameID + "', " +
+                         "DaysRented = " + daysRented + ", " +
+                         "Price = " + price.ToString(System.Globalization.CultureInfo.InvariantCulture) + " " +
+                         "WHERE RentalID = '" + rentalID + "' AND GameID = '" + originalGameID + "'";
+
+            return db.MyExecuteNonQuery(sql, CommandType.Text, ref err);
         }
         public decimal GetTotalCostByRentalID(string rentalID)
         {

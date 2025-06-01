@@ -42,7 +42,7 @@ namespace Game_Rental_Management
             {
                 dtRental = new DataTable();
                 dtRental.Clear();
-
+                txtTotalCost.Enabled = false;
                 DataSet ds = dbRental.GetRentals();
                 dtRental = ds.Tables[0];
 
@@ -85,6 +85,7 @@ namespace Game_Rental_Management
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Them = true;
+
 
             txtRentalID.ResetText();
             txtCustomerID.ResetText();
@@ -194,6 +195,7 @@ namespace Game_Rental_Management
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            txtTotalCost.Enabled = false;
             txtRentalID.ResetText();
             txtCustomerID.ResetText();
             dtpRentalDate.Value = DateTime.Now;
@@ -231,10 +233,12 @@ namespace Game_Rental_Management
             BLRentalDetails detailBL = new BLRentalDetails();
             decimal totalCost = detailBL.GetTotalCostByRentalID(txtRentalID.Text);
             txtTotalCost.Text = totalCost.ToString("0.00");
+
         }
 
         private void RecalculateTotal_Click(object sender, EventArgs e)
         {
+
             BLRentalDetails detailBL = new BLRentalDetails();
             decimal totalCost = detailBL.GetTotalCostByRentalID(txtRentalID.Text);
 
@@ -252,6 +256,11 @@ namespace Game_Rental_Management
             );
             LoadData();
             MessageBox.Show("Tổng chi phí đã được tính và cập nhật.");
+        }
+
+        private void txtTotalCost_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

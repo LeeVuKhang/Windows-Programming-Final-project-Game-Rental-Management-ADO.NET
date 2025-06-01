@@ -125,6 +125,12 @@
     <Compile Include="FrmRentalDetails.Designer.cs">
       <DependentUpon>FrmRentalDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="HDSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HDSD.Designer.cs">
+      <DependentUpon>HDSD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentalReportDataSet.cs">
@@ -169,6 +175,9 @@
     <EmbeddedResource Include="GameRevenueReport.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="HDSD.resx">
+      <DependentUpon>HDSD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -209,6 +218,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />
+    <None Include="Resources\image-Photoroom.png" />
+    <None Include="Resources\printer.jpg" />
+    <None Include="Resources\asadal_stock_20.jpg" />
+    <None Include="Resources\asadal_stock_33.jpg" />
+    <None Include="Resources\asadal_stock_48.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
