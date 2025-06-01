@@ -1,7 +1,9 @@
 ﻿using Game_Rental_Management.BS_layer;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Game_Rental_Management
@@ -56,6 +58,24 @@ namespace Game_Rental_Management
                 btnCancel.Enabled = false;
                 btnAdd.Enabled = true;
                 btnEdit.Enabled = true;
+
+                var platforms = dtGame.AsEnumerable()
+                                      .Select(row => row.Field<string>("Platform"))
+                                      .Distinct()
+                                      .OrderBy(p => p)
+                                      .ToList();
+
+                var genres = dtGame.AsEnumerable()
+                                   .Select(row => row.Field<string>("Genre"))
+                                   .Distinct()
+                                   .OrderBy(g => g)
+                                   .ToList();
+
+                platforms.Insert(0, "All");
+                genres.Insert(0, "All");
+
+                cboPlatform.DataSource = platforms;
+                cboGener.DataSource = genres;
 
                 if (dgvGAME.CurrentRow != null)
                     dgvGAME_CellClick(null, null);
@@ -219,5 +239,44 @@ namespace Game_Rental_Management
         {
             
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim().Replace("'", "''"); // xử lý dấu nháy đơn
+            string platform = cboPlatform.SelectedItem?.ToString() ?? "All";
+            string genre = cboGener.SelectedItem?.ToString() ?? "All";
+
+            DataView dv = new DataView(dtGame);
+
+            List<string> filters = new List<string>();
+
+            // Filter theo keyword trên các cột chính (convert GameID nếu kiểu số)
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                filters.Add(
+                    $"Convert(GameID, 'System.String') LIKE '%{keyword}%' OR " +
+                    $"Title LIKE '%{keyword}%' OR " +
+                    $"Platform LIKE '%{keyword}%' OR " +
+                    $"Genre LIKE '%{keyword}%'"
+                );
+            }
+
+            if (platform != "All")
+            {
+                filters.Add($"Platform = '{platform}'");
+            }
+
+            if (genre != "All")
+            {
+                filters.Add($"Genre = '{genre}'");
+            }
+
+            string finalFilter = string.Join(" AND ", filters);
+
+            dv.RowFilter = finalFilter;
+
+            dgvGAME.DataSource = dv;
+        }
+
     }
 }

@@ -43,8 +43,8 @@ namespace Game_Rental_Management
                 dgvCUSTOMER.DataSource = dtCustomer;
                 dgvCUSTOMER.Columns[0].Width = 80;   // CustomerID
                 dgvCUSTOMER.Columns[1].Width = 150;  // Name
-                dgvCUSTOMER.Columns[2].Width = 200;  // Email
-                dgvCUSTOMER.Columns[3].Width = 120;  // Phone
+                dgvCUSTOMER.Columns[2].Width = 120;  // Phone
+                dgvCUSTOMER.Columns[3].Width = 200;  // Email
                 dgvCUSTOMER.Columns[4].Width = 200;  // Address
 
                 // Reset input fields
@@ -207,6 +207,29 @@ namespace Game_Rental_Management
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                dgvCUSTOMER.DataSource = dtCustomer;
+            }
+            else
+            {
+                DataView dv = new DataView(dtCustomer);
+
+                dv.RowFilter = string.Format(
+                    "Convert(CustomerID, 'System.String') LIKE '%{0}%' OR " +
+                    "Name LIKE '%{0}%' OR " +
+                    "Phone LIKE '%{0}%' OR " +
+                    "Email LIKE '%{0}%'",
+                    keyword.Replace("'", "''"));
+
+                dgvCUSTOMER.DataSource = dv;
+            }
         }
     }
 }

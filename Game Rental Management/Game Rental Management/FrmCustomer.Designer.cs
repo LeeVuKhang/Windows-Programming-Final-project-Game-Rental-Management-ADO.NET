@@ -47,6 +47,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCUSTOMER)).BeginInit();
             this.panel2.SuspendLayout();
@@ -55,11 +58,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.txtSearch);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dgvCUSTOMER);
             this.panel1.Location = new System.Drawing.Point(14, 16);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(644, 271);
+            this.panel1.Size = new System.Drawing.Size(644, 316);
             this.panel1.TabIndex = 1;
             // 
             // label5
@@ -75,10 +81,10 @@
             // dgvCUSTOMER
             // 
             this.dgvCUSTOMER.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCUSTOMER.Location = new System.Drawing.Point(14, 58);
+            this.dgvCUSTOMER.Location = new System.Drawing.Point(12, 91);
             this.dgvCUSTOMER.Name = "dgvCUSTOMER";
             this.dgvCUSTOMER.RowHeadersWidth = 62;
-            this.dgvCUSTOMER.Size = new System.Drawing.Size(615, 196);
+            this.dgvCUSTOMER.Size = new System.Drawing.Size(615, 211);
             this.dgvCUSTOMER.TabIndex = 0;
             this.dgvCUSTOMER.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCUSTOMER_CellClick);
             // 
@@ -100,9 +106,9 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(14, 302);
+            this.panel2.Location = new System.Drawing.Point(14, 347);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(644, 232);
+            this.panel2.Size = new System.Drawing.Size(644, 187);
             this.panel2.TabIndex = 3;
             // 
             // label6
@@ -118,7 +124,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(121, 103);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(493, 20);
             this.txtEmail.TabIndex = 14;
@@ -267,13 +273,45 @@
             this.label1.Text = "Customer ID: ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(83, 60);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(235, 22);
+            this.txtSearch.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(17, 62);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 16);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Search:";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSearch.Location = new System.Drawing.Point(332, 58);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(79, 27);
+            this.btnSearch.TabIndex = 16;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // FrmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCustomer";
             this.Size = new System.Drawing.Size(675, 550);
             this.Load += new System.EventHandler(this.FrmCustomer_Load);
@@ -307,5 +345,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label7;
     }
 }

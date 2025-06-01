@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,5 +52,31 @@ namespace Game_Rental_Management.BS_layer
                 "WHERE BranchID = '" + branchID + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
+        public DataSet GetRevenueData(string branchID, DateTime FromDate, DateTime ToDate)
+        {
+            string query = @"
+            SELECT 
+                b.BranchID, 
+                b.BranchName, 
+                ISNULL(SUM(r.TotalCost), 0) AS Revenue
+            FROM 
+                Branch b
+            LEFT JOIN 
+                Rental r ON b.BranchID = r.BranchID 
+                          AND r.RentalDate BETWEEN @FromDate AND @ToDate
+            WHERE 
+                (@BranchID IS NULL OR b.BranchID = @BranchID)
+            GROUP BY 
+                b.BranchID, b.BranchName";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@BranchID", (object)branchID ?? DBNull.Value),
+                new SqlParameter("@FromDate", FromDate),
+                new SqlParameter("@ToDate", ToDate)
+            };
+
+            return db.ExecuteQueryDataSet(query, CommandType.Text, parameters);
+        }
+
     }
 }

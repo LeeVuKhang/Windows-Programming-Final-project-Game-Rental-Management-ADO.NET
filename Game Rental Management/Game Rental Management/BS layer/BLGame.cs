@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,34 @@ namespace Game_Rental_Management.BS_layer
                 return Convert.ToDecimal(ds.Tables[0].Rows[0]["PricePerDay"]);
             return 0;
         }
+        public DataSet GetRevenueData(string gameID, DateTime fromDate, DateTime toDate)
+        {
+            string query = @"
+            SELECT 
+                g.GameID, 
+                g.Title, 
+                ISNULL(SUM(rd.Price), 0) AS Revenue
+            FROM 
+                Game g
+            LEFT JOIN 
+                RentalDetails rd ON g.GameID = rd.GameID
+            LEFT JOIN 
+                Rental r ON rd.RentalID = r.RentalID 
+                          AND r.RentalDate BETWEEN @FromDate AND @ToDate
+            WHERE 
+                (@GameID IS NULL OR g.GameID = @GameID)
+            GROUP BY 
+                g.GameID, g.Title";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@GameID", (object)gameID ?? DBNull.Value),
+                new SqlParameter("@FromDate", fromDate),
+                new SqlParameter("@ToDate", toDate)
+            };
+
+            return db.ExecuteQueryDataSet(query, CommandType.Text, parameters);
+        }
+
     }
 
 

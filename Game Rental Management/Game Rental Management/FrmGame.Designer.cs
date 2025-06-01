@@ -50,6 +50,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cboPlatform = new System.Windows.Forms.ComboBox();
+            this.cboGener = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGAME)).BeginInit();
             this.panel2.SuspendLayout();
@@ -58,33 +63,35 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.cboGener);
+            this.panel1.Controls.Add(this.cboPlatform);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.txtSearch);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dgvGAME);
-            this.panel1.Location = new System.Drawing.Point(18, 18);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(966, 442);
+            this.panel1.Size = new System.Drawing.Size(644, 318);
             this.panel1.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 32);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(14, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 39);
+            this.label5.Size = new System.Drawing.Size(74, 25);
             this.label5.TabIndex = 1;
             this.label5.Text = "GAME";
             // 
             // dgvGAME
             // 
             this.dgvGAME.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGAME.Location = new System.Drawing.Point(21, 89);
-            this.dgvGAME.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvGAME.Location = new System.Drawing.Point(19, 90);
             this.dgvGAME.Name = "dgvGAME";
             this.dgvGAME.RowHeadersWidth = 62;
-            this.dgvGAME.Size = new System.Drawing.Size(922, 328);
+            this.dgvGAME.Size = new System.Drawing.Size(615, 213);
             this.dgvGAME.TabIndex = 0;
             this.dgvGAME.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGAME_CellClick);
             // 
@@ -109,36 +116,36 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(18, 469);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Location = new System.Drawing.Point(12, 336);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(966, 360);
+            this.panel2.Size = new System.Drawing.Size(644, 203);
             this.panel2.TabIndex = 4;
             // 
             // txtBranchID
             // 
-            this.txtBranchID.Location = new System.Drawing.Point(201, 226);
+            this.txtBranchID.Location = new System.Drawing.Point(99, 117);
+            this.txtBranchID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBranchID.Name = "txtBranchID";
-            this.txtBranchID.Size = new System.Drawing.Size(504, 26);
+            this.txtBranchID.Size = new System.Drawing.Size(194, 20);
             this.txtBranchID.TabIndex = 19;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(78, 226);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(21, 118);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 25);
+            this.label7.Size = new System.Drawing.Size(68, 16);
             this.label7.TabIndex = 18;
             this.label7.Text = "Branch ID:";
             // 
             // chkStatus
             // 
             this.chkStatus.AutoSize = true;
-            this.chkStatus.Location = new System.Drawing.Point(754, 226);
+            this.chkStatus.Location = new System.Drawing.Point(558, 119);
+            this.chkStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkStatus.Name = "chkStatus";
-            this.chkStatus.Size = new System.Drawing.Size(82, 24);
+            this.chkStatus.Size = new System.Drawing.Size(56, 17);
             this.chkStatus.TabIndex = 5;
             this.chkStatus.Text = "Status";
             this.chkStatus.UseVisualStyleBackColor = true;
@@ -147,18 +154,18 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(33, 169);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(318, 118);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 25);
+            this.label6.Size = new System.Drawing.Size(93, 16);
             this.label6.TabIndex = 15;
             this.label6.Text = "Price per day: ";
             // 
             // txtPricePerDay
             // 
-            this.txtPricePerDay.Location = new System.Drawing.Point(201, 169);
+            this.txtPricePerDay.Location = new System.Drawing.Point(417, 117);
+            this.txtPricePerDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPricePerDay.Name = "txtPricePerDay";
-            this.txtPricePerDay.Size = new System.Drawing.Size(738, 26);
+            this.txtPricePerDay.Size = new System.Drawing.Size(122, 20);
             this.txtPricePerDay.TabIndex = 14;
             // 
             // btnCancel
@@ -167,10 +174,9 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancel.Location = new System.Drawing.Point(738, 291);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancel.Location = new System.Drawing.Point(482, 160);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(120, 49);
+            this.btnCancel.Size = new System.Drawing.Size(80, 32);
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -182,10 +188,9 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSave.Location = new System.Drawing.Point(585, 291);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Location = new System.Drawing.Point(380, 160);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(120, 49);
+            this.btnSave.Size = new System.Drawing.Size(80, 32);
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -197,10 +202,9 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEdit.Location = new System.Drawing.Point(435, 291);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEdit.Location = new System.Drawing.Point(280, 160);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(120, 49);
+            this.btnEdit.Size = new System.Drawing.Size(80, 32);
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -212,10 +216,9 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(294, 291);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdd.Location = new System.Drawing.Point(186, 160);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(120, 49);
+            this.btnAdd.Size = new System.Drawing.Size(80, 32);
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -227,10 +230,9 @@
             this.btnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnReload.Location = new System.Drawing.Point(150, 291);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnReload.Location = new System.Drawing.Point(90, 160);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(120, 49);
+            this.btnReload.Size = new System.Drawing.Size(80, 32);
             this.btnReload.TabIndex = 8;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = false;
@@ -239,47 +241,42 @@
             // txtGenre
             // 
             this.txtGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenre.Location = new System.Drawing.Point(645, 109);
-            this.txtGenre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGenre.Location = new System.Drawing.Point(417, 77);
             this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(294, 30);
+            this.txtGenre.Size = new System.Drawing.Size(197, 22);
             this.txtGenre.TabIndex = 7;
             // 
             // txtTitle
             // 
             this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.Location = new System.Drawing.Point(645, 38);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTitle.Location = new System.Drawing.Point(416, 31);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(294, 30);
+            this.txtTitle.Size = new System.Drawing.Size(197, 22);
             this.txtTitle.TabIndex = 6;
             // 
             // txtPlatform
             // 
             this.txtPlatform.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlatform.Location = new System.Drawing.Point(201, 109);
-            this.txtPlatform.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPlatform.Location = new System.Drawing.Point(100, 71);
             this.txtPlatform.Name = "txtPlatform";
-            this.txtPlatform.Size = new System.Drawing.Size(236, 30);
+            this.txtPlatform.Size = new System.Drawing.Size(194, 22);
             this.txtPlatform.TabIndex = 5;
             // 
             // txtGameID
             // 
             this.txtGameID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGameID.Location = new System.Drawing.Point(201, 40);
-            this.txtGameID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGameID.Location = new System.Drawing.Point(100, 26);
             this.txtGameID.Name = "txtGameID";
-            this.txtGameID.Size = new System.Drawing.Size(236, 30);
+            this.txtGameID.Size = new System.Drawing.Size(194, 22);
             this.txtGameID.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(562, 114);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(364, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 25);
+            this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Genre:";
             // 
@@ -287,10 +284,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(546, 43);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(374, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 25);
+            this.label3.Size = new System.Drawing.Size(36, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Title:";
             // 
@@ -298,10 +294,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 114);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(22, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 25);
+            this.label2.Size = new System.Drawing.Size(62, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Platform: ";
             // 
@@ -309,21 +304,69 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 45);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(22, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Game ID: ";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSearch.Location = new System.Drawing.Point(547, 57);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(79, 27);
+            this.btnSearch.TabIndex = 18;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(67, 59);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(237, 22);
+            this.txtSearch.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(17, 61);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 16);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "ID/Title:";
+            // 
+            // cboPlatform
+            // 
+            this.cboPlatform.FormattingEnabled = true;
+            this.cboPlatform.Location = new System.Drawing.Point(314, 60);
+            this.cboPlatform.Name = "cboPlatform";
+            this.cboPlatform.Size = new System.Drawing.Size(96, 21);
+            this.cboPlatform.TabIndex = 21;
+            // 
+            // cboGener
+            // 
+            this.cboGener.FormattingEnabled = true;
+            this.cboGener.Location = new System.Drawing.Point(417, 60);
+            this.cboGener.Name = "cboGener";
+            this.cboGener.Size = new System.Drawing.Size(113, 21);
+            this.cboGener.TabIndex = 22;
+            // 
             // FrmGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmGame";
-            this.Size = new System.Drawing.Size(1012, 846);
+            this.Size = new System.Drawing.Size(675, 550);
             this.Load += new System.EventHandler(this.FrmGame_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -358,5 +401,10 @@
         private System.Windows.Forms.CheckBox chkStatus;
         private System.Windows.Forms.TextBox txtBranchID;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cboGener;
+        private System.Windows.Forms.ComboBox cboPlatform;
     }
 }

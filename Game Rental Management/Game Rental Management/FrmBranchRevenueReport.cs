@@ -20,11 +20,36 @@ namespace Game_Rental_Management
         DBMain db = null;
         string err;
         DataTable dtBranchRevenue = null;
-        BLBranchRevenue dbBranchRevenue = new BLBranchRevenue();
+        BLBranch dbBranchRevenue = new BLBranch();
         public FrmBranchRevenueReport()
         {
             InitializeComponent();
             db = new DBMain();
+            LoadBranches();
+            dtpFromDate.Value = DateTime.Now.AddDays(-30);
+        }
+
+
+        private void LoadBranches()
+        {
+            try
+            {
+                DataSet ds = dbBranchRevenue.GetAllBranches(); 
+                DataTable table = ds.Tables[0];
+
+                DataRow allRow = table.NewRow();
+                allRow["BranchID"] = DBNull.Value;
+                allRow["BranchName"] = "All branches";
+                table.Rows.InsertAt(allRow, 0);
+
+                cboBranch.DataSource = table;
+                cboBranch.DisplayMember = "BranchName";
+                cboBranch.ValueMember = "BranchID";
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Không lấy được danh sách chi nhánh: {ex.Message}");
+            }
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
@@ -34,10 +59,12 @@ namespace Game_Rental_Management
                 MessageBox.Show("Ngày bắt đầu phải nhỏ hơn hoặc bằng ngày kết thúc.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            string branchID = cboBranch.SelectedValue == DBNull.Value || cboBranch.SelectedValue == null
+            ? null
+            : cboBranch.SelectedValue.ToString();
             dtBranchRevenue = new DataTable();
             dtBranchRevenue.Clear();
-            DataSet ds = dbBranchRevenue.GetData(dtpFromDate.Value, dtpToDate.Value);
+            DataSet ds = dbBranchRevenue.GetRevenueData(branchID, dtpFromDate.Value, dtpToDate.Value);
             dtBranchRevenue = ds.Tables[0];
             dgvREVENUE.DataSource = dtBranchRevenue;
 
@@ -59,8 +86,8 @@ namespace Game_Rental_Management
             ChartArea area = new ChartArea("RevenueChartArea");
             area.AxisX.LabelStyle.Angle = -30;
             area.AxisX.Interval = 1;
-            area.AxisX.Title = "Chi nhánh";
-            area.AxisY.Title = "Doanh thu";
+            area.AxisX.Title = "Branch";
+            area.AxisY.Title = "Revenue";
             area.AxisX.LabelStyle.Font = new Font("Segoe UI", 8, FontStyle.Regular);
             area.AxisY.LabelStyle.Font = new Font("Segoe UI", 8, FontStyle.Regular);
             chartRevenue.ChartAreas.Add(area);

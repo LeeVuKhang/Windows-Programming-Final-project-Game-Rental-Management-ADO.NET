@@ -5,29 +5,35 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+
 namespace Game_Rental_Management
 {
     public partial class FrmGameRevenueReport : UserControl
     {
-        private BLGame dbGame; 
-        private BLGameRevenue dbGameRevenue; 
-        private DataTable dtGameRevenue;
+        private readonly BLGame dbGame = new BLGame();
+        private DataTable dtGameRevenue = new DataTable();
+
         public FrmGameRevenueReport()
         {
             InitializeComponent();
-            dbGame = new BLGame(); 
-            dbGameRevenue = new BLGameRevenue(); 
-            dtGameRevenue = new DataTable(); 
             LoadGames();
         }
+
         private void LoadGames()
         {
             try
             {
                 DataSet ds = dbGame.GetGames();
-                cboGame.DataSource = ds.Tables[0];
-                cboGame.DisplayMember = "Title"; 
-                cboGame.ValueMember = "GameID";  
+                DataTable table = ds.Tables[0];
+
+                DataRow allRow = table.NewRow();
+                allRow["GameID"] = DBNull.Value;    
+                allRow["Title"] = "All games";
+                table.Rows.InsertAt(allRow, 0);
+
+                cboGame.DataSource = table;
+                cboGame.DisplayMember = "Title";
+                cboGame.ValueMember = "GameID";
             }
             catch (SqlException ex)
             {
@@ -37,7 +43,7 @@ namespace Game_Rental_Management
 
         private void FrmGameRevenueReport_Load(object sender, EventArgs e)
         {
-            dtpFromDate.Value = DateTime.Now.AddDays(-30); 
+            dtpFromDate.Value = DateTime.Now.AddDays(-30);
             dtpToDate.Value = DateTime.Now;
         }
 
@@ -49,50 +55,64 @@ namespace Game_Rental_Management
                 return;
             }
 
-            if (cboGame.SelectedValue == null)
-            {
-                MessageBox.Show("Vui lòng chọn một game!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string gameID = cboGame.SelectedValue == DBNull.Value || cboGame.SelectedValue == null
+                ? null
+                : cboGame.SelectedValue.ToString();
 
-            string gameID = cboGame.SelectedValue.ToString();
-            dtGameRevenue = new DataTable();
-            dtGameRevenue.Clear();
-            DataSet ds = dbGameRevenue.GetData(gameID, dtpFromDate.Value, dtpToDate.Value);
-            dtGameRevenue = ds.Tables[0];
+            dtGameRevenue = dbGame.GetRevenueData(gameID, dtpFromDate.Value, dtpToDate.Value).Tables[0];
             dgvGameRevenue.DataSource = dtGameRevenue;
 
-            // Cấu hình DataGridView
+            ConfigureGrid();
+            ConfigureChart();
+        }
+
+
+        private void ConfigureGrid()
+        {
             dgvGameRevenue.AllowUserToAddRows = false;
             dgvGameRevenue.ReadOnly = true;
             dgvGameRevenue.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvGameRevenue.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvGameRevenue.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvGameRevenue.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgvGameRevenue.Columns[0].Width = 75;   // GameID
-            dgvGameRevenue.Columns[1].Width = 150;  // Title
-            dgvGameRevenue.Columns[2].Width = 70;   // Revenue
 
-            // Cấu hình Chart
+            if (dgvGameRevenue.Columns.Count >= 3)
+            {
+                dgvGameRevenue.Columns[0].Width = 75;   // GameID
+                dgvGameRevenue.Columns[1].Width = 150;  // Title
+                dgvGameRevenue.Columns[2].Width = 70;   // Revenue
+                dgvGameRevenue.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
+        }
+
+        private void ConfigureChart()
+        {
             chartGameRevenue.Series.Clear();
             chartGameRevenue.ChartAreas.Clear();
 
-            ChartArea area = new ChartArea("GameRevenueChartArea");
-            area.AxisX.LabelStyle.Angle = -30;
-            area.AxisX.Interval = 1;
-            area.AxisX.Title = "Game";
-            area.AxisY.Title = "Doanh thu";
-            area.AxisX.LabelStyle.Font = new Font("Segoe UI", 8, FontStyle.Regular);
-            area.AxisY.LabelStyle.Font = new Font("Segoe UI", 8, FontStyle.Regular);
+            var area = new ChartArea("GameRevenueChartArea")
+            {
+                AxisX =
+                {
+                    LabelStyle = { Angle = -30, Font = new Font("Segoe UI", 8), Interval = 1 },
+                    Title = "Game"
+                },
+                AxisY =
+                {
+                    Title = "Revenue",
+                    LabelStyle = { Font = new Font("Segoe UI", 8) }
+                }
+            };
             chartGameRevenue.ChartAreas.Add(area);
 
-            Series series = new Series("Revenue");
-            series.ChartType = SeriesChartType.Column;
-            series.XValueMember = "Title";
-            series.YValueMembers = "Revenue";
-            series.Color = Color.DodgerBlue;
+            var series = new Series("Revenue")
+            {
+                ChartType = SeriesChartType.Column,
+                XValueMember = "Title",
+                YValueMembers = "Revenue",
+                Color = Color.DodgerBlue,
+                Font = new Font("Segoe UI", 8)
+            };
             series["PixelPointWidth"] = "40";
-            series.Font = new Font("Segoe UI", 8, FontStyle.Regular);
 
             chartGameRevenue.Series.Add(series);
             chartGameRevenue.Legends.Clear();

@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvREVENUE = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,16 +41,19 @@
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cboBranch = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvREVENUE)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.cboBranch);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.chartRevenue);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.dgvREVENUE);
@@ -57,6 +61,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(644, 392);
             this.panel1.TabIndex = 5;
+            // 
+            // chartRevenue
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartRevenue.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartRevenue.Legends.Add(legend1);
+            this.chartRevenue.Location = new System.Drawing.Point(377, 58);
+            this.chartRevenue.Name = "chartRevenue";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartRevenue.Series.Add(series1);
+            this.chartRevenue.Size = new System.Drawing.Size(262, 321);
+            this.chartRevenue.TabIndex = 2;
+            this.chartRevenue.Text = "chart1";
             // 
             // label5
             // 
@@ -71,10 +91,10 @@
             // dgvREVENUE
             // 
             this.dgvREVENUE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvREVENUE.Location = new System.Drawing.Point(14, 58);
+            this.dgvREVENUE.Location = new System.Drawing.Point(14, 98);
             this.dgvREVENUE.Name = "dgvREVENUE";
             this.dgvREVENUE.RowHeadersWidth = 62;
-            this.dgvREVENUE.Size = new System.Drawing.Size(357, 321);
+            this.dgvREVENUE.Size = new System.Drawing.Size(357, 281);
             this.dgvREVENUE.TabIndex = 0;
             // 
             // panel2
@@ -140,21 +160,25 @@
             this.btnGenerate.UseVisualStyleBackColor = false;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
-            // chartRevenue
+            // cboBranch
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartRevenue.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartRevenue.Legends.Add(legend2);
-            this.chartRevenue.Location = new System.Drawing.Point(377, 58);
-            this.chartRevenue.Name = "chartRevenue";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartRevenue.Series.Add(series2);
-            this.chartRevenue.Size = new System.Drawing.Size(262, 321);
-            this.chartRevenue.TabIndex = 2;
-            this.chartRevenue.Text = "chart1";
+            this.cboBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBranch.FormattingEnabled = true;
+            this.cboBranch.Location = new System.Drawing.Point(131, 72);
+            this.cboBranch.Margin = new System.Windows.Forms.Padding(2);
+            this.cboBranch.Name = "cboBranch";
+            this.cboBranch.Size = new System.Drawing.Size(241, 21);
+            this.cboBranch.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(15, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 18);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Select branch: ";
             // 
             // FrmBranchRevenueReport
             // 
@@ -166,10 +190,10 @@
             this.Size = new System.Drawing.Size(675, 550);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvREVENUE)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,5 +210,7 @@
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRevenue;
+        private System.Windows.Forms.ComboBox cboBranch;
+        private System.Windows.Forms.Label label1;
     }
 }

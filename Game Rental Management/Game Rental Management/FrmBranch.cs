@@ -183,5 +183,29 @@ namespace Game_Rental_Management
         {
 
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                dgvBRANCH.DataSource = dtBranch;
+            }
+            else
+            {
+                DataView dv = new DataView(dtBranch);
+
+                dv.RowFilter = string.Format(
+                    "Convert(BranchID, 'System.String') LIKE '%{0}%' OR " +
+                    "BranchName LIKE '%{0}%' OR " +
+                    "Address LIKE '%{0}%' OR " +
+                    "Phone LIKE '%{0}%'",
+                    keyword.Replace("'", "''")); 
+
+                dgvBRANCH.DataSource = dv;
+            }
+        }
+
     }
 }
