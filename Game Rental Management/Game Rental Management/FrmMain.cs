@@ -106,9 +106,9 @@ namespace Game_Rental_Management
         }
         private void btnBranchRevenue_Click(object sender, EventArgs e)
         {
-            btnBranchRevenue.BackColor = Color.RoyalBlue;
-            btnRentalDetails.BackColor = btnRental.BackColor = btnBranch.BackColor = btnCustomerReport.BackColor = btnGameRevenue.BackColor =
-                 btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
+            //btnBranchRevenue.BackColor = Color.RoyalBlue;
+            //btnRentalDetails.BackColor = btnRental.BackColor = btnBranch.BackColor = btnCustomerReport.BackColor = btnGameRevenue.BackColor =
+            //     btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
             FrmBranchReport frmBranchReport = new FrmBranchReport();
             frmBranchReport.ShowDialog();
             
@@ -148,9 +148,9 @@ namespace Game_Rental_Management
 
         private void btnGameRevenue_Click(object sender, EventArgs e)
         {
-            btnGameRevenue.BackColor = Color.RoyalBlue;
-            btnRentalDetails.BackColor = btnRental.BackColor = btnBranch.BackColor = btnCustomerReport.BackColor =
-                 btnBranchRevenue.BackColor = btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
+            //btnGameRevenue.BackColor = Color.RoyalBlue;
+            //btnRentalDetails.BackColor = btnRental.BackColor = btnBranch.BackColor = btnCustomerReport.BackColor =
+            //     btnBranchRevenue.BackColor = btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
 
             FrmGameReport frmGame = new FrmGameReport();
             frmGame.ShowDialog();
@@ -159,9 +159,9 @@ namespace Game_Rental_Management
 
         private void btnCustomerReport_Click(object sender, EventArgs e)
         {
-            btnCustomerReport.BackColor = Color.RoyalBlue;
-            btnRentalDetails.BackColor = btnRental.BackColor = btnBranch.BackColor = 
-                 btnBranchRevenue.BackColor = btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
+            //btnCustomerReport.BackColor = Color.RoyalBlue;
+            //btnRentalDetails.BackColor = btnRental.BackColor = btnBranch.BackColor = 
+            //     btnBranchRevenue.BackColor = btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
             FrmCustomerReport CustomerReport = new FrmCustomerReport();
             CustomerReport.ShowDialog();
         }

@@ -66,9 +66,9 @@
             this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(14, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 25);
+            this.label5.Size = new System.Drawing.Size(192, 25);
             this.label5.TabIndex = 1;
-            this.label5.Text = "RENTAL";
+            this.label5.Text = "RENTAL DETAILS";
             // 
             // dgvRENTALDETAIL
             // 

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.dgvRENTAL = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.RecalculateTotal = new System.Windows.Forms.Button();
@@ -51,6 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRENTAL)).BeginInit();
             this.panel2.SuspendLayout();
@@ -65,16 +65,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(644, 284);
             this.panel1.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(192, 25);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "RENTAL DETAILS";
             // 
             // dgvRENTAL
             // 
@@ -313,6 +303,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Rental ID: ";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 25);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "RENTAL";
+            // 
             // FrmRental
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,7 +335,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvRENTAL;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtBranchID;
@@ -357,5 +356,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAddDetails;
         private System.Windows.Forms.Button RecalculateTotal;
+        private System.Windows.Forms.Label label5;
     }
 }
