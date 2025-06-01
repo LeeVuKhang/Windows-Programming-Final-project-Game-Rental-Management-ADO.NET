@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Game_Rental_Management.BS_layer.BLBranch">
+    <Position X="4.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQIAABAAAAAAAAAAAAAAAAAAABAAIAAAg=</HashCode>
+      <FileName>BS layer\BLBranch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game_Rental_Management.BS_layer.BLCustomer">
+    <Position X="3" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAQAQAAAABAAAAAAAgCAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>BS layer\BLCustomer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game_Rental_Management.BS_layer.BLGame">
+    <Position X="4.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABKAAAAAAASAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BS layer\BLGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game_Rental_Management.BS_layer.BLRental">
+    <Position X="1.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAQAAAIAAAAAAAAAAAAQAEAAAAAAAAAAAA=</HashCode>
+      <FileName>BS layer\BLRental.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game_Rental_Management.BS_layer.BLRentalDetails">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQEAAAACAAAAAAAIBAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BS layer\BLRentalDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game_Rental_Management.DB_layer.DBMain">
+    <Position X="1.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAEAAACQAAAQAAICAAAAAAAA=</HashCode>
+      <FileName>DB layer\DBMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
