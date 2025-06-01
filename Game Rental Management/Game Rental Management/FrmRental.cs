@@ -323,5 +323,11 @@ namespace Game_Rental_Management
             dgvRENTAL.DataSource = dv;
 
         }
+
+        private void lblHowToUse_Click(object sender, EventArgs e)
+        {
+            HDSD hdsd = new HDSD();
+            hdsd.ShowDialog();
+        }
     }
 }

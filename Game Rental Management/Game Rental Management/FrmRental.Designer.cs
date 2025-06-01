@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cboRID = new System.Windows.Forms.ComboBox();
             this.cboBID = new System.Windows.Forms.ComboBox();
             this.cboCID = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvRENTAL = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.RecalculateTotal = new System.Windows.Forms.Button();
             this.btnAddDetails = new System.Windows.Forms.Button();
@@ -54,10 +58,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboRID = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblHowToUse = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRENTAL)).BeginInit();
             this.panel2.SuspendLayout();
@@ -79,6 +80,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(644, 315);
             this.panel1.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 13);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Rental ID: ";
+            // 
+            // cboRID
+            // 
+            this.cboRID.FormattingEnabled = true;
+            this.cboRID.Location = new System.Drawing.Point(85, 56);
+            this.cboRID.Name = "cboRID";
+            this.cboRID.Size = new System.Drawing.Size(105, 21);
+            this.cboRID.TabIndex = 28;
             // 
             // cboBID
             // 
@@ -130,9 +148,28 @@
             this.dgvRENTAL.TabIndex = 0;
             this.dgvRENTAL.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRENTAL_CellClick);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(200, 61);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 13);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Customer ID: ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(375, 61);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 13);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Branch ID: ";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.Controls.Add(this.lblHowToUse);
             this.panel2.Controls.Add(this.RecalculateTotal);
             this.panel2.Controls.Add(this.btnAddDetails);
             this.panel2.Controls.Add(this.label6);
@@ -163,7 +200,7 @@
             this.RecalculateTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RecalculateTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecalculateTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RecalculateTotal.Location = new System.Drawing.Point(465, 119);
+            this.RecalculateTotal.Location = new System.Drawing.Point(170, 120);
             this.RecalculateTotal.Margin = new System.Windows.Forms.Padding(2);
             this.RecalculateTotal.Name = "RecalculateTotal";
             this.RecalculateTotal.Size = new System.Drawing.Size(79, 32);
@@ -365,40 +402,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Rental ID: ";
             // 
-            // cboRID
+            // lblHowToUse
             // 
-            this.cboRID.FormattingEnabled = true;
-            this.cboRID.Location = new System.Drawing.Point(85, 56);
-            this.cboRID.Name = "cboRID";
-            this.cboRID.Size = new System.Drawing.Size(105, 21);
-            this.cboRID.TabIndex = 28;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 60);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 13);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "Rental ID: ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(200, 61);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 13);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Customer ID: ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(375, 61);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 13);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "Branch ID: ";
+            this.lblHowToUse.AutoSize = true;
+            this.lblHowToUse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHowToUse.Location = new System.Drawing.Point(264, 128);
+            this.lblHowToUse.Name = "lblHowToUse";
+            this.lblHowToUse.Size = new System.Drawing.Size(80, 16);
+            this.lblHowToUse.TabIndex = 28;
+            this.lblHowToUse.Text = "How to use?";
+            this.lblHowToUse.Click += new System.EventHandler(this.lblHowToUse_Click);
             // 
             // FrmRental
             // 
@@ -451,5 +464,6 @@
         private System.Windows.Forms.ComboBox cboRID;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblHowToUse;
     }
 }
