@@ -16,8 +16,8 @@ namespace Game_Rental_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new FrmCustomerReport());
             Application.Run(new FrmMain());
-            //Application.Run(new FrmMain());
         }
     }
 }

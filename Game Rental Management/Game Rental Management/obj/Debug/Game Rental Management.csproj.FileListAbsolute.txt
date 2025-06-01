@@ -76,3 +76,75 @@ C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-
 C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmCustomerSearch.resources
 C:\Users\23110\OneDrive\Documents\GitHub\Windows-Programming-Final-project-Game-Rental-Management-ADO.NET\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmGameRevenueReport.resources
 C:\Users\Admin\Desktop\Đại học\Năm hai\HK2\Window program\Final project\ADO.NET vesions\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmGameRevenueReport.resources
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\Game Rental Management.exe.config
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\Game Rental Management.exe
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\Game Rental Management.pdb
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\Microsoft.ReportViewer.Design.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\EnvDTE.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\stdole.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.AssemblyReference.cache
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmBranch.resources
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmBranchRevenueReport.resources
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmCustomer.resources
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmGame.resources
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmGameRevenueReport.resources
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmMain.resources
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmRental.resources
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmRentalDetails.resources
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.Properties.Resources.resources
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.GenerateResource.cache
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.csproj.CoreCompileInputs.cache
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game Ren.31F852F7.Up2Date
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.exe
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game Rental Management.pdb
+D:\Test\Game Rental Management\Game Rental Management\obj\Debug\Game_Rental_Management.FrmCustomerReport.resources
+D:\Test\Game Rental Management\Game Rental Management\bin\Debug\CustomerRentalReport.rdlc

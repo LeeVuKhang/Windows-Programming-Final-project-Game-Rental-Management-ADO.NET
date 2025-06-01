@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RentalReportDataSet" targetNamespace="http://tempuri.org/RentalReportDataSet.xsd" xmlns:mstns="http://tempuri.org/RentalReportDataSet.xsd" xmlns="http://tempuri.org/RentalReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GameRentalDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GameRentalDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Game_Rental_Management.Properties.Settings.GlobalReference.Default.GameRentalDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CustomerMasterDataTableAdapter" GeneratorDataComponentClassName="CustomerMasterDataTableAdapter" Name="CustomerMasterData" UserDataComponentName="CustomerMasterDataTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GameRentalDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+    C.CustomerID,
+    C.Name AS CustomerName,
+    C.Phone AS CustomerPhone,
+    C.Email,
+    C.Address,
+    TotalGame.TotalGamesRented,
+
+    R.RentalID,
+    R.RentalDate,
+    R.ReturnDate,
+
+    G.Title AS GameTitle,
+    G.Platform,
+    G.Genre,
+    RD.DaysRented,
+    RD.Price
+FROM Customer C
+JOIN (
+    SELECT 
+        C2.CustomerID, 
+        COUNT(RD3.GameID) AS TotalGamesRented
+    FROM Customer C2
+    JOIN Rental R2 ON C2.CustomerID = R2.CustomerID
+    JOIN RentalDetails RD3 ON R2.RentalID = RD3.RentalID
+    GROUP BY C2.CustomerID
+) AS TotalGame ON C.CustomerID = TotalGame.CustomerID
+JOIN Rental R ON C.CustomerID = R.CustomerID
+JOIN RentalDetails RD ON R.RentalID = RD.RentalID
+JOIN Game G ON RD.GameID = G.GameID
+ORDER BY C.CustomerID, R.RentalDate;
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CustomerID" DataSetColumn="CustomerID" />
+              <Mapping SourceColumn="CustomerName" DataSetColumn="CustomerName" />
+              <Mapping SourceColumn="CustomerPhone" DataSetColumn="CustomerPhone" />
+              <Mapping SourceColumn="Email" DataSetColumn="Email" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="TotalGamesRented" DataSetColumn="TotalGamesRented" />
+              <Mapping SourceColumn="RentalID" DataSetColumn="RentalID" />
+              <Mapping SourceColumn="RentalDate" DataSetColumn="RentalDate" />
+              <Mapping SourceColumn="ReturnDate" DataSetColumn="ReturnDate" />
+              <Mapping SourceColumn="GameTitle" DataSetColumn="GameTitle" />
+              <Mapping SourceColumn="Platform" DataSetColumn="Platform" />
+              <Mapping SourceColumn="Genre" DataSetColumn="Genre" />
+              <Mapping SourceColumn="DaysRented" DataSetColumn="DaysRented" />
+              <Mapping SourceColumn="Price" DataSetColumn="Price" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RentalReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="RentalReportDataSet" msprop:Generator_DataSetName="RentalReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CustomerMasterData" msprop:Generator_RowEvHandlerName="CustomerMasterDataRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerMasterDataRowDeleted" msprop:Generator_RowDeletingName="CustomerMasterDataRowDeleting" msprop:Generator_RowEvArgName="CustomerMasterDataRowChangeEvent" msprop:Generator_TablePropName="CustomerMasterData" msprop:Generator_RowChangedName="CustomerMasterDataRowChanged" msprop:Generator_RowChangingName="CustomerMasterDataRowChanging" msprop:Generator_TableClassName="CustomerMasterDataDataTable" msprop:Generator_RowClassName="CustomerMasterDataRow" msprop:Generator_TableVarName="tableCustomerMasterData" msprop:Generator_UserTableName="CustomerMasterData">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CustomerID" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_ColumnVarNameInTable="columnCustomerID" msprop:Generator_UserColumnName="CustomerID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerName" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_ColumnVarNameInTable="columnCustomerName" msprop:Generator_UserColumnName="CustomerName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustomerPhone" msprop:Generator_ColumnPropNameInRow="CustomerPhone" msprop:Generator_ColumnPropNameInTable="CustomerPhoneColumn" msprop:Generator_ColumnVarNameInTable="columnCustomerPhone" msprop:Generator_UserColumnName="CustomerPhone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_UserColumnName="Address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalGamesRented" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="TotalGamesRented" msprop:Generator_ColumnPropNameInTable="TotalGamesRentedColumn" msprop:Generator_ColumnVarNameInTable="columnTotalGamesRented" msprop:Generator_UserColumnName="TotalGamesRented" type="xs:int" minOccurs="0" />
+              <xs:element name="RentalID" msprop:Generator_ColumnPropNameInRow="RentalID" msprop:Generator_ColumnPropNameInTable="RentalIDColumn" msprop:Generator_ColumnVarNameInTable="columnRentalID" msprop:Generator_UserColumnName="RentalID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RentalDate" msprop:Generator_ColumnPropNameInRow="RentalDate" msprop:Generator_ColumnPropNameInTable="RentalDateColumn" msprop:Generator_ColumnVarNameInTable="columnRentalDate" msprop:Generator_UserColumnName="RentalDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ReturnDate" msprop:Generator_ColumnPropNameInRow="ReturnDate" msprop:Generator_ColumnPropNameInTable="ReturnDateColumn" msprop:Generator_ColumnVarNameInTable="columnReturnDate" msprop:Generator_UserColumnName="ReturnDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="GameTitle" msprop:Generator_ColumnPropNameInRow="GameTitle" msprop:Generator_ColumnPropNameInTable="GameTitleColumn" msprop:Generator_ColumnVarNameInTable="columnGameTitle" msprop:Generator_UserColumnName="GameTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Platform" msprop:Generator_ColumnPropNameInRow="Platform" msprop:Generator_ColumnPropNameInTable="PlatformColumn" msprop:Generator_ColumnVarNameInTable="columnPlatform" msprop:Generator_UserColumnName="Platform" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Genre" msprop:Generator_ColumnPropNameInRow="Genre" msprop:Generator_ColumnPropNameInTable="GenreColumn" msprop:Generator_ColumnVarNameInTable="columnGenre" msprop:Generator_UserColumnName="Genre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DaysRented" msprop:Generator_ColumnPropNameInRow="DaysRented" msprop:Generator_ColumnPropNameInTable="DaysRentedColumn" msprop:Generator_ColumnVarNameInTable="columnDaysRented" msprop:Generator_UserColumnName="DaysRented" type="xs:int" minOccurs="0" />
+              <xs:element name="Price" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_ColumnVarNameInTable="columnPrice" msprop:Generator_UserColumnName="Price" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -33,7 +33,7 @@ namespace Game_Rental_Management
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             btnCustomer.BackColor = Color.RoyalBlue;
-            btnRentalDetails.BackColor = btnGame.BackColor = btnRental.BackColor = btnBranchRevenue.BackColor =
+            btnRentalDetails.BackColor = btnGame.BackColor = btnRental.BackColor = btnBranchRevenue.BackColor = btnCustomerReport.BackColor = btnGameRevenue.BackColor =
                  btnGame.BackColor = btnBranch.BackColor = Color.FromArgb(0, 31, 63);
 
             frmBranch1.Hide();
@@ -48,7 +48,7 @@ namespace Game_Rental_Management
         private void btnGame_Click(object sender, EventArgs e)
         {
             btnGame.BackColor = Color.RoyalBlue;
-            btnRentalDetails.BackColor  = btnRental.BackColor = btnBranchRevenue.BackColor =
+            btnRentalDetails.BackColor  = btnRental.BackColor = btnBranchRevenue.BackColor = btnCustomerReport.BackColor = btnGameRevenue.BackColor =
                  btnBranch.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
 
             frmBranch1.Hide();
@@ -64,7 +64,7 @@ namespace Game_Rental_Management
         private void btnRental_Click(object sender, EventArgs e)
         {
             btnRental.BackColor = Color.RoyalBlue;
-            btnRentalDetails.BackColor  = btnBranch.BackColor = btnBranchRevenue.BackColor =
+            btnRentalDetails.BackColor  = btnBranch.BackColor = btnBranchRevenue.BackColor = btnCustomerReport.BackColor = btnGameRevenue.BackColor =
                  btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
 
             frmBranch1.Hide();
@@ -79,7 +79,7 @@ namespace Game_Rental_Management
         private void btnRentalDetails_Click(object sender, EventArgs e)
         {
             btnRentalDetails.BackColor = Color.RoyalBlue;
-            btnBranch.BackColor  = btnRental.BackColor = btnBranchRevenue.BackColor =
+            btnBranch.BackColor  = btnRental.BackColor = btnBranchRevenue.BackColor = btnCustomerReport.BackColor = btnGameRevenue.BackColor =
                  btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
 
             frmBranch1.Hide();
@@ -94,7 +94,7 @@ namespace Game_Rental_Management
         private void btnBranch_Click(object sender, EventArgs e)
         {
             btnBranch.BackColor = Color.RoyalBlue;
-            btnRentalDetails.BackColor = btnRental.BackColor = btnBranchRevenue.BackColor =
+            btnRentalDetails.BackColor = btnRental.BackColor = btnBranchRevenue.BackColor = btnCustomerReport.BackColor = btnGameRevenue.BackColor =
                  btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
 
             frmBranch1.Show();
@@ -108,7 +108,7 @@ namespace Game_Rental_Management
         private void btnBranchRevenue_Click(object sender, EventArgs e)
         {
             btnBranchRevenue.BackColor = Color.RoyalBlue;
-            btnRentalDetails.BackColor = btnRental.BackColor = btnBranch.BackColor =
+            btnRentalDetails.BackColor = btnRental.BackColor = btnBranch.BackColor = btnCustomerReport.BackColor = btnGameRevenue.BackColor =
                  btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
 
             frmBranchRevenueReport1.Show();
@@ -155,7 +155,7 @@ namespace Game_Rental_Management
         private void btnGameRevenue_Click(object sender, EventArgs e)
         {
             btnGameRevenue.BackColor = Color.RoyalBlue;
-            btnRentalDetails.BackColor = btnRental.BackColor = btnBranch.BackColor =
+            btnRentalDetails.BackColor = btnRental.BackColor = btnBranch.BackColor = btnCustomerReport.BackColor =
                  btnBranchRevenue.BackColor = btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
 
             frmGameRevenueReport1.Show();
@@ -165,6 +165,15 @@ namespace Game_Rental_Management
             frmRentalDetails1.Hide();
             frmRental1.Hide();
             frmBranchRevenueReport1.Hide();
+        }
+
+        private void btnCustomerReport_Click(object sender, EventArgs e)
+        {
+            btnCustomerReport.BackColor = Color.RoyalBlue;
+            btnRentalDetails.BackColor = btnRental.BackColor = btnBranch.BackColor = 
+                 btnBranchRevenue.BackColor = btnGame.BackColor = btnCustomer.BackColor = Color.FromArgb(0, 31, 63);
+            FrmCustomerReport CustomerReport = new FrmCustomerReport();
+            CustomerReport.Show();
         }
     }
 }
